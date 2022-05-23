@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+
+    <data>
+
+        <variable
+            name="m"
+            type="com.linktech.saihub.db.bean.TokenInfoBean" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_78"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:background="@drawable/shape_fff6f8fa_radius_16"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingEnd="@dimen/dp_20">
+
+
+        <ImageView
+            android:id="@+id/iv_token"
+            android:layout_width="@dimen/dp_42"
+            android:layout_height="@dimen/dp_42"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/icon_btc" />
+
+        <TextView
+            android:id="@+id/tv_token_name"
+            style="@style/text_black_normal_bold"
+            android:layout_marginStart="@dimen/dp_12"
+            android:maxWidth="@dimen/dp_85"
+            android:singleLine="true"
+            android:textColor="@color/color_FF090E16"
+            android:textSize="@dimen/text_18_sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_token"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{m.tokenShort}"
+            tools:text="BTC" />
+
+        <TextView
+            android:id="@+id/tv_num"
+            style="@style/text_black_num_normal_bold"
+            android:layout_marginStart="@dimen/dp_18"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="@{m.tokenBalance}"
+            android:textColor="@color/color_FF090E16"
+            android:textSize="@dimen/text_14_sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_asset"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_asset"
+            style="@style/text_black_normal_bold"
+            android:layout_marginTop="@dimen/dp_3"
+            tools:text="≈ $ 3.22"
+            android:textColor="@color/color_FF6D778B"
+            android:textSize="@dimen/text_12_sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_num"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--    <external-path-->
+    <!--        name="files_root"-->
+    <!--        path="Android/data/${FILEPROVIDER_AUTHORITIES}/" />-->
+    <cache-path
+        name="app_update"
+        path="." /> <!-- File dirPath = getCacheDir(); -->
+    <external-path
+        name="files_root"
+        path="." /> <!-- File dirPath=Environment.getExternalStorageDirectory() 要开对应权限 -->
+    <files-path
+        name="files"
+        path="." /> <!-- File dirPath = getFilesDir(); -->
+    <!--存储卡的Pictures目录放图片文件-->
+    <external-path
+        name="my_images"
+        path="Pictures"/>
+</paths>

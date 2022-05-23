@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<ripple xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:color="@color/color_ripple">    &lt;!&ndash;波纹颜色&ndash;&gt;-->
+<!--    <item >-->
+        <selector xmlns:android="http://schemas.android.com/apk/res/android">
+            <item
+                android:drawable="@drawable/shape_btn_normal_enabled"
+                android:state_enabled="false" />
+            <!-- 未点击背景图-->
+            <item
+                android:drawable="@drawable/shape_btn_normal"
+                android:state_pressed="false" />
+            <!-- 点击背景图-->
+            <item
+                android:drawable="@drawable/shape_btn_normal_press"
+                android:state_pressed="true" />
+        </selector>
+<!--    </item>-->
+<!--</ripple>-->

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/ll_poster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_poster"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_341"
+            android:background="@drawable/shape_white_radius_16"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_coin"
+                style="@style/text_black_normal_bold"
+                android:layout_marginTop="@dimen/dp_20"
+                android:textSize="@dimen/text_18_sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/btc" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/dp_215"
+                android:layout_height="@dimen/dp_215"
+                android:layout_marginTop="@dimen/dp_12"
+                android:background="@drawable/shape_fff6f8fa_radius_8">
+
+                <ImageView
+                    android:id="@+id/iv_address_qrcode"
+                    android:layout_width="@dimen/dp_191"
+                    android:layout_height="@dimen/dp_191"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_address"
+                style="@style/text_black_small"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_25"
+                android:gravity="center"
+                android:maxWidth="@dimen/dp_245"
+                android:textColor="@color/color_FF44494F"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                tools:text="bc1a9e91e9..25cbC26D66" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_83"
+            android:paddingStart="@dimen/dp_20"
+            android:paddingEnd="@dimen/dp_20">
+
+            <ImageView
+                android:id="@+id/iv_slogan"
+                android:layout_width="@dimen/dp_68"
+                android:layout_height="@dimen/dp_26"
+                android:src="@mipmap/icon_slogan_post"
+                app:layout_constraintBottom_toTopOf="@+id/tv_net"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_net"
+                style="@style/text_black_small"
+                android:layout_marginTop="@dimen/dp_8"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_slogan" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/dp_46"
+                android:layout_height="@dimen/dp_46"
+                android:background="@drawable/shape_white_radius_4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_qrcode"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+</layout>

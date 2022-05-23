@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:title_text="@string/reset" />
+
+        <TextView
+            style="@style/text_gray_normal_bold"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/reset_password" />
+
+        <com.linktech.saihub.view.sys.SwitchEditText
+            android:id="@+id/et_wallet_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            app:switch_hint="@string/reset_hint" />
+
+        <TextView
+            style="@style/text_gray_normal_bold"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@string/reset_password_0" />
+
+        <com.linktech.saihub.view.ed.SplitEditTextView
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:inputType="number"
+            app:borderColor="@color/color_FFE8EBEF"
+            app:circleRadius="@dimen/dp_24"
+            app:contentNumber="6"
+            app:contentShowMode="password"
+            app:corner_size="@dimen/dp_8"
+            app:cursorColor="@color/color_FF48ADC3"
+            app:inputBoxStyle="singleBox"
+            app:isfocusedShowCursor="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_app_name"
+            app:pasContentColor="@color/color_FF48ADC3"
+            app:spaceSize="@dimen/dp_19" />
+
+        <TextView
+            style="@style/text_gray_normal_bold"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@string/reset_password_1" />
+
+        <com.linktech.saihub.view.ed.SplitEditTextView
+            android:id="@+id/et_password_repeat"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:inputType="number"
+            app:borderColor="@color/color_FFE8EBEF"
+            app:circleRadius="@dimen/dp_24"
+            app:contentNumber="6"
+            app:contentShowMode="password"
+            app:corner_size="@dimen/dp_8"
+            app:cursorColor="@color/color_FF48ADC3"
+            app:inputBoxStyle="singleBox"
+            app:isfocusedShowCursor="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_app_name"
+            app:pasContentColor="@color/color_FF48ADC3"
+            app:spaceSize="@dimen/dp_19" />
+
+        <TextView
+            android:id="@+id/tv_error_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="Password doesn't match"
+            android:textColor="@color/color_FFFF3750"
+            android:textSize="@dimen/text_12_sp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            style="@style/btn_normal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_37"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/btn_normal"
+            android:enabled="false"
+            android:text="@string/confirm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+            app:layout_constraintTop_toBottomOf="@id/tv_tip" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            style="@style/text_black_normal_bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_30"
+            android:text="@string/cancel"
+            android:textColor="@color/color_FF005F6F" />
+    </LinearLayout>
+</layout>

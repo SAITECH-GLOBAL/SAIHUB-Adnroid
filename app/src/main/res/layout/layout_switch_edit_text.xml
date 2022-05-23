@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_47"
+        android:gravity="center_vertical"
+        android:paddingEnd="@dimen/dp_13"
+        android:textColor="@color/color_FF005F6F"
+        android:textSize="@dimen/text_20_sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1." />
+
+    <EditText
+        android:id="@+id/et_switch"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_47"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="@color/white"
+        android:fontFamily="@font/montserrat_regular"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/color_FFA8ACB0"
+        android:textSize="@dimen/text_14_sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_clear"
+        app:layout_constraintStart_toEndOf="@+id/tv_desc"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_clear"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@null"
+        android:src="@mipmap/icon_edit_x"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/et_switch"
+        app:layout_constraintEnd_toStartOf="@+id/btn_switch"
+        app:layout_constraintTop_toTopOf="@+id/et_switch" />
+
+    <ImageButton
+        android:id="@+id/btn_switch"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_24"
+        android:background="@null"
+        android:src="@mipmap/icon_eye_open"
+        app:layout_constraintBottom_toBottomOf="@id/et_switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_switch" />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/color_1F000000"
+        app:layout_constraintTop_toBottomOf="@+id/et_switch" />
+
+    <TextView
+        android:id="@+id/tv_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="@color/color_FFFF3750"
+        android:textSize="@dimen/text_12_sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/view_line"
+        tools:text="@string/password_error_try_again"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

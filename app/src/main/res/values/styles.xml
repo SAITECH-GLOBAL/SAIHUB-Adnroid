@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="ToastAnimation" parent="@android:style/Animation.Toast" />
+
+    <style name="custom_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+
+    <style name="custom_full_screen_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+
+    <style name="custom_full_screen_dialog_wallet" parent="@android:style/Theme.Dialog">
+        <!-- 上面说过，只要是Dialog，这两个属性必须设置 -->
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--隐藏状态栏内容和高度，适用于SDK19（4.4）及以上版本-->
+        <item name="android:windowFullscreen">true</item>
+        <!-- 对于28及以上的版本，需要指定该属性，否则对于异形屏的手机，无法让布局铺满异性区域 -->
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
+        <item name="android:windowTranslucentStatus" >true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+        <!-- 透明导航栏 -->
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="wc_hint_dialog" parent="@android:style/Theme.Holo.Light.Dialog.NoActionBar">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0</item>
+    </style>
+
+
+    <!--    <style name="custom_et_style" parent="et_scrollbars">-->
+    <!--        <item name="android:scrollbars">vertical</item>-->
+    <!--        <item name="android:scrollbarStyle">outsideInset</item>-->
+    <!--        <item name="android:textIsSelectable">true</item>-->
+    <!--        <item name="android:background">@null</item>-->
+    <!--        <item name="android:textCursorDrawable">@drawable/edit_cursor_color</item>-->
+    <!--    </style>-->
+
+    <style name="dialogLoading" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:backgroundDimAmount">0.0</item>
+    </style>
+
+    <style name="text_black_normal">
+        <item name="android:textSize">@dimen/text_14_sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="text_black_small">
+        <item name="android:textSize">@dimen/text_12_sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="text_black_normal_bold">
+        <item name="android:textSize">@dimen/text_14_sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="text_black_num_normal_bold">
+        <item name="android:textSize">@dimen/text_14_sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/d_dinexp_bold</item>
+    </style>
+
+    <style name="text_black_num_normal">
+        <item name="android:textSize">@dimen/text_14_sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/d_dinexp</item>
+    </style>
+
+    <style name="text_gray_normal_bold">
+        <item name="android:textSize">@dimen/text_14_sp</item>
+        <item name="android:textColor">@color/color_FF686F7C</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="rb_normal_style">
+        <item name="android:textColor">@color/color_sel_rb</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/selector_rb_normal</item>
+    </style>
+
+    <style name="rb_num_style">
+        <item name="android:textColor">@color/color_sel_rb</item>
+        <item name="fontFamily">@font/d_dinexp_bold</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/selector_rb_normal</item>
+    </style>
+
+    <style name="TransparentBottomSheetStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/SheetStyle</item>
+    </style>
+
+    <style name="btn_normal" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/text_14_sp</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <!--bottom弹窗动画-->
+    <style name="bottom_dialog_anim">
+        <!--//进入时的动画-->
+        <item name="@android:windowEnterAnimation">@anim/bottom_dialog_show</item>
+        <!--//退出时的动画-->
+        <item name="@android:windowExitAnimation">@anim/bottom_dialog_dismiss</item>
+    </style>
+
+    <!--抽屉弹窗动画-->
+    <style name="drawer_dialog_anim">
+        <!--//进入时的动画-->
+        <item name="@android:windowEnterAnimation">@anim/drawer_dialog_show</item>
+        <!--//退出时的动画-->
+        <item name="@android:windowExitAnimation">@anim/drawer_dialog_dismiss</item>
+    </style>
+
+
+    <style name="SheetStyle" parent="android:Widget">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="behavior_peekHeight">auto</item>
+        <item name="behavior_hideable">true</item>
+        <item name="behavior_skipCollapsed">false</item>
+    </style>
+
+
+    <!--选中的样式，可以设置选择的字体颜色，这里只是为了改变选择时的字体大小-->
+    <style name="bottom_tab_title_active">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <!--没有选中的样式，导航默认的字体大小就是12sp-->
+    <style name="bottom_tab_title_inactive">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+
+</resources>

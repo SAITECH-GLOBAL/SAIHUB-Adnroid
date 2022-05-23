@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.poll.PoolAddActivity">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:title_text="@string/power_system" />
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/srl_trading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <com.linktech.saihub.view.LiteRefreshHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nested_scorllview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_card_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_60"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:background="@drawable/shape_bg_shadow"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:rcv_bottomLeftRadiu="@dimen/dp_16"
+                        app:rcv_bottomRightRadiu="@dimen/dp_16">
+
+                        <TextView
+                            android:id="@+id/tv_power_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="@dimen/dp_20"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:maxLength="30"
+                            android:singleLine="true"
+                            android:textColor="@color/color_FF44494F"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Bi11ll Address111111111" />
+
+                        <ImageView
+                            android:id="@+id/iv_circle_status"
+                            android:layout_width="@dimen/dp_12"
+                            android:layout_height="@dimen/dp_12"
+                            android:layout_marginEnd="@dimen/dp_4"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_power_status"
+                            app:layout_constraintEnd_toStartOf="@+id/tv_power_status"
+                            app:layout_constraintTop_toTopOf="@+id/tv_power_status"
+                            tools:src="@mipmap/icon_power_offline" />
+
+                        <TextView
+                            android:id="@+id/tv_power_status"
+                            style="@style/text_black_normal_bold"
+                            android:layout_marginEnd="@dimen/dp_20"
+                            android:textColor="@color/color_FFFF3750"
+                            app:layout_constraintBottom_toBottomOf="@+id/tv_power_number"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_power_number"
+                            tools:text="@string/offline" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cl_card_top"
+                        app:layout_constraintVertical_weight="1"
+                        tools:visibility="visible">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_20"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:layout_marginEnd="@dimen/dp_20">
+
+
+                            <TextView
+                                android:id="@+id/tv_total_power"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/d_dinexp_bold"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                app:layout_constraintBottom_toTopOf="@+id/guide_total"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="98.880" />
+
+                            <TextView
+                                android:id="@+id/tv_total_power_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_12_sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_total_power"
+                                app:layout_constraintStart_toEndOf="@+id/tv_total_power"
+                                tools:text="KW" />
+
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guide_total"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.5" />
+
+                            <TextView
+                                android:id="@+id/tv_output_heat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/d_dinexp_bold"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                app:layout_constraintStart_toEndOf="@+id/guide_total"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="88006.04" />
+
+                            <TextView
+                                android:id="@+id/tv_output_heat_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_12_sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_total_power"
+                                app:layout_constraintStart_toEndOf="@+id/tv_output_heat"
+                                tools:text="KW" />
+
+                            <TextView
+                                android:id="@+id/tv_total_hint"
+                                style="@style/text_black_small"
+                                android:layout_marginTop="@dimen/dp_12"
+                                android:text="@string/total_power"
+                                android:textColor="@color/color_FF686F7C"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_total_power" />
+
+
+                            <ImageView
+                                android:id="@+id/tv_total_hint_msg"
+                                android:layout_width="@dimen/dp_16"
+                                android:layout_height="@dimen/dp_16"
+                                android:layout_marginStart="@dimen/dp_4"
+                                android:src="@mipmap/icon_power_line_yellow"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_total_hint"
+                                app:layout_constraintStart_toEndOf="@+id/tv_total_hint"
+                                app:layout_constraintTop_toTopOf="@+id/tv_total_hint" />
+
+                            <TextView
+                                android:id="@+id/tv_output_heat_hint"
+                                style="@style/text_black_small"
+                                android:layout_marginTop="@dimen/dp_12"
+                                android:text="@string/power_consumption"
+                                android:textColor="@color/color_FF686F7C"
+                                app:layout_constraintStart_toStartOf="@+id/tv_output_heat"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_output_heat" />
+
+                            <ImageView
+                                android:id="@+id/tv_output_heat_msg"
+                                android:layout_width="@dimen/dp_16"
+                                android:layout_height="@dimen/dp_16"
+                                android:layout_marginStart="@dimen/dp_4"
+                                android:src="@mipmap/icon_power_line_blue"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_output_heat_hint"
+                                app:layout_constraintStart_toEndOf="@+id/tv_output_heat_hint"
+                                app:layout_constraintTop_toTopOf="@+id/tv_output_heat_hint" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/tv_unit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_26"
+                            android:layout_marginTop="@dimen/dp_16"
+                            android:text="@string/kw_h"
+                            android:textColor="@color/color_FF3E475A"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_top"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_160"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_16"
+                            android:layout_marginEnd="@dimen/dp_10"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_price_trend_desc"
+                            tools:visibility="visible">
+
+
+                            <com.linktech.saihub.view.line.DeFiChartView
+                                android:id="@+id/lc_defi_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingTop="@dimen/dp_5"
+                                android:paddingBottom="@dimen/dp_5"
+                                tools:background="@color/btn_filled_blue_bg_disabled"
+                                tools:ignore="MissingConstraints" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_20"
+                            android:layout_marginTop="@dimen/dp_16"
+                            android:layout_marginEnd="@dimen/dp_20"
+                            android:background="@drawable/shape_rb_radius_8"
+                            android:paddingStart="@dimen/dp_20"
+                            android:paddingTop="@dimen/dp_16"
+                            android:paddingEnd="@dimen/dp_20"
+                            android:paddingBottom="@dimen/dp_16"
+                            tools:visibility="visible">
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guide_center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.6" />
+
+                            <TextView
+                                android:id="@+id/tv_inlet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="@string/power_inlet"
+                                android:textColor="@color/color_FF686F7C"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/tv_outlet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="@string/power_outlet"
+                                android:textColor="@color/color_FF686F7C"
+                                android:textSize="12sp"
+                                app:layout_constraintStart_toEndOf="@+id/guide_center"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <View
+                                android:id="@+id/line"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_1"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:background="@color/color_0F090E16"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_inlet" />
+
+                            <TextView
+                                android:id="@+id/tv_in_temp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:fontFamily="@font/d_dinexp_bold"
+                                android:textColor="@color/color_FF090E16"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/line"
+                                tools:text="47.4 ℃" />
+
+                            <TextView
+                                android:id="@+id/tv_out_temp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_16"
+                                android:fontFamily="@font/d_dinexp_bold"
+                                android:textColor="@color/color_FF090E16"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toEndOf="@+id/guide_center"
+                                app:layout_constraintTop_toBottomOf="@+id/line"
+                                tools:text="47.4 ℃" />
+
+                            <TextView
+                                android:id="@+id/tv_temp_in_hint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_8"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="@string/water_temp"
+                                android:textColor="@color/color_FFA8ACB0"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_in_temp" />
+
+                            <TextView
+                                android:id="@+id/tv_temp_out_hint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_8"
+                                android:fontFamily="@font/montserrat_medium"
+                                android:text="@string/water_temp"
+                                android:textColor="@color/color_FFA8ACB0"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/guide_center"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_in_temp" />
+
+                            <TextView
+                                android:id="@+id/tv_water_p_in"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_33"
+                                android:fontFamily="@font/d_dinexp_bold"
+                                android:textColor="#ff090e16"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_temp_in_hint"
+                                tools:text="1000Mpa" />
+
+                            <TextView
+                                android:id="@+id/tv_water_p_out"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_33"
+                                android:fontFamily="@font/d_dinexp_bold"
+                                android:textColor="#ff090e16"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toEndOf="@+id/guide_center"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_temp_in_hint"
+                                tools:text="1000Mpa" />
+
+                            <TextView
+                                android:id="@+id/tv_p_in_hint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_7"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:text="@string/water_pressure"
+                                android:textColor="@color/color_FFA8ACB0"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_water_p_in" />
+
+                            <TextView
+                                android:id="@+id/tv_p_out_hint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_7"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:text="@string/water_pressure"
+                                android:textColor="@color/color_FFA8ACB0"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toEndOf="@+id/guide_center"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_water_p_in" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_bottom"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/dp_20"
+                            android:layout_marginTop="@dimen/dp_16"
+                            android:layout_marginEnd="@dimen/dp_20"
+                            android:background="@drawable/shape_bg_gray_radius_8"
+                            android:paddingStart="@dimen/dp_20"
+                            android:paddingTop="@dimen/dp_28"
+                            android:paddingEnd="@dimen/dp_20"
+                            android:paddingBottom="@dimen/dp_24"
+                            tools:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/tv_in_temp_hint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_2"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:text="@string/indoor_temp"
+                                android:textColor="@color/color_FF686F7C"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <View
+                                android:id="@+id/line1"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/dp_18"
+                                android:background="@color/color_0F090E16"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_in_temp_hint" />
+
+                            <TextView
+                                android:id="@+id/tv_out_temp_hint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_20"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:text="@string/outdoor_temp"
+                                android:textColor="@color/color_FF686F7C"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+                            <View
+                                android:id="@+id/line2"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/dp_18"
+                                android:background="@color/color_0F090E16"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_out_temp_hint" />
+
+                            <TextView
+                                android:id="@+id/tv_cabinet_temp_hint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_20"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:text="@string/cabinet_temp"
+                                android:textColor="@color/color_FF686F7C"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+
+                            <TextView
+                                android:id="@+id/tv_temp_indoor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/d_dinexp_bold"
+                                android:textColor="@color/color_FF090E16"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_in_temp_hint"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/tv_in_temp_hint"
+                                tools:text="47.4 ℃" />
+
+                            <TextView
+                                android:id="@+id/tv_temp_outdoor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/d_dinexp_bold"
+                                android:textColor="@color/color_FF090E16"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_out_temp_hint"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/tv_out_temp_hint"
+                                tools:text="47.4 ℃" />
+
+                            <TextView
+                                android:id="@+id/tv_temp_cabinet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/d_dinexp_bold"
+                                android:textColor="@color/color_FF090E16"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_cabinet_temp_hint"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/tv_cabinet_temp_hint"
+                                tools:text="47.4 ℃" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_height="@dimen/dp_40" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_empty"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cl_card_top"
+                        app:layout_constraintVertical_weight="1">
+
+                        <ImageView
+                            android:id="@+id/iv_empty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="18dp"
+                            android:src="@mipmap/icon_power_empty"
+                            app:layout_constraintBottom_toTopOf="@+id/tv_empty_hint"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_empty_hint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/power_empty_string"
+                            android:textColor="@color/color_a6000000"
+                            android:textSize="14sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+
+
+</layout>

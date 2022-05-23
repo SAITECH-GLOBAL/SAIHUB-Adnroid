@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_white_radius_16"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp_40"
+        android:paddingBottom="@dimen/dp_44"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/iv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/icon_fail_hint" />
+
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:text="@string/load_failure"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/btn_normal"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:text="@string/ok"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</layout>

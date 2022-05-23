@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.linktech.saihub"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:name=".app.SaiHubApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name_case"
+        android:preserveLegacyExternalStorage="true"
+        android:requestLegacyExternalStorage="true"
+        android:resizeableActivity="true"
+        android:roundIcon="@mipmap/app_round_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:exported="true"
+            android:theme="@style/splash_theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.activity.login.GuideActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.activity.wallet.manager.BackUpPhraseHintActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.activity.wallet.manager.VerifyPwdActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.manager.ManagerAddressActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.manager.ManagerPassphraseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.manager.ModifyPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.manager.BackupPrivatePhraseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.manager.WalletManagerActivity"
+            android:exported="true"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.activity.setting.LanguageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.poll.PoolAddActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.poll.PoolListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:launchMode="singleTask"></activity>
+        <activity
+            android:name=".ui.activity.login.LoginActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.activity.login.ResetActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.create.AddWalletActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.create.SelectPhraseTypeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.create.RecoveryPhraseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.create.VerifyPhraseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.create.SetPassPhraseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.imp.ImportWalletActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.imp.SetPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.poll.PoolWebActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.power.PowerAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.power.PowerDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.wallet.transaction.TransactionRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.wallet.transaction.TransactionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.setting.CurrencyUnitActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.setting.AddressBookListActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.setting.AddressAddActivity" />
+        <activity
+            android:name=".ui.activity.wallet.transaction.ReceiveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.setting.UnlockSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.setting.UnlockPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.setting.AppVersionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.wallet.transaction.TransactionDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.wallet.transaction.MultiSignActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.wallet.transaction.MultiSignDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.wallet.manager.ResetPwdMnemonicPrivateKeyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.wallet.manager.AddressKeyShowActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.manager.AddressExportKeyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.WebActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.WeChatQRCodeActivity"
+            android:exported="true"
+            android:theme="@style/full_screen" />
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="false" />
+
+        <provider
+            android:name=".util.provider.MyProvider"
+            android:authorities="com.linktech.saihub.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" /> <!-- 指纹识别权限 -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE " />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="com.fingerprints.service.ACCESS_FINGERPRINT_MANAGER" /> <!-- 支付宝支付权限 -->
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- 用于开启 debug 版本的应用在 6.0 系统上的层叠窗口权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+</manifest>

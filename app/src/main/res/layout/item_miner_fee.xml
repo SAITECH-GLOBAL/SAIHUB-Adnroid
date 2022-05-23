@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+
+    <data>
+
+        <variable
+            name="m"
+            type="com.linktech.saihub.entity.databinding.FeeEntity" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/cl_root"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_84"
+        android:background="@{m.isSelect()?@drawable/shape_fee_sel:@drawable/shape_fff6f8fa_radius_8}"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_type"
+            style="@style/text_black_normal_bold"
+            android:text="@{m.type}"
+            android:textColor="@{m.isSelect()?@color/color_FF005F6F:@color/color_FF44494F}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_balance"
+                style="@style/text_black_num_normal_bold"
+                android:text="@{m.num}"
+                android:textColor="@{m.isSelect()?@color/color_FF005F6F:@color/color_FF44494F}"
+                android:textSize="@dimen/text_12_sp" />
+
+            <TextView
+                android:id="@+id/tv_coin"
+                style="@style/text_black_normal_bold"
+                android:layout_marginStart="@dimen/dp_2"
+                tools:text="BTC"
+                android:textColor="@{m.isSelect()?@color/color_FF005F6F:@color/color_FF44494F}"
+                android:textSize="@dimen/text_12_sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_convert"
+            style="@style/text_black_num_normal"
+            android:layout_marginTop="@dimen/dp_2"
+            android:text="@{m.convertType+' '+m.convert}"
+            android:textColor="@{m.isSelect()?@color/color_FF005F6F:@color/color_FF44494F}"
+            android:textSize="@dimen/text_12_sp" />
+    </LinearLayout>
+
+</layout>

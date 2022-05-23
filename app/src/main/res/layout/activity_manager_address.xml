@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.activity.wallet.manager.ManagerAddressActivity">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:title_text="@string/address" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_address"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_list_address_list" />
+    </LinearLayout>
+</layout>

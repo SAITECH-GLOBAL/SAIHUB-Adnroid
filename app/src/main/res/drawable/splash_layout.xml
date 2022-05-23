@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <item android:drawable="@color/color_FF32C7D6" />
+    <item
+        android:width="@dimen/dp_295"
+        android:height="@dimen/dp_346"
+        android:gravity="end">
+        <bitmap android:src="@mipmap/icon_bg_login" />
+    </item>
+    <item
+        android:width="@dimen/dp_136"
+        android:height="@dimen/dp_136"
+        android:gravity="center_horizontal"
+        android:top="@dimen/dp_230">
+        <bitmap android:src="@mipmap/icon_sai_logo" />
+    </item>
+    <item
+        android:width="@dimen/dp_99"
+        android:height="@dimen/dp_18"
+        android:gravity="center_horizontal"
+        android:top="@dimen/dp_370">
+        <bitmap android:src="@mipmap/icon_app_name" />
+    </item>
+</layer-list>

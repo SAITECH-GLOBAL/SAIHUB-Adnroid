@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.poll.PoolAddActivity">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:title_text="@string/set_password_login" />
+
+        <TextView
+            android:id="@+id/tv_pwd_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/password"
+            android:textColor="@color/color_FF090E16"
+            android:textSize="@dimen/text_24_sp" />
+
+        <com.linktech.saihub.view.ed.SplitEditTextView
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:inputType="number"
+            app:borderColor="@color/color_FFE8EBEF"
+            app:circleRadius="@dimen/dp_24"
+            app:contentNumber="6"
+            app:contentShowMode="password"
+            app:corner_size="@dimen/dp_8"
+            app:cursorColor="@color/color_FF48ADC3"
+            app:inputBoxStyle="singleBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_app_name"
+            app:pasContentColor="@color/color_FF48ADC3"
+            app:spaceSize="@dimen/dp_19" />
+
+    </LinearLayout>
+
+
+</layout>

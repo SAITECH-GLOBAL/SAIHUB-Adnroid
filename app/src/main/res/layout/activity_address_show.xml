@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.activity.wallet.manager.AddressKeyShowActivity">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:title_text="" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:background="@drawable/shape_bg_red_radius_8"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:lineSpacingExtra="@dimen/dp_5"
+                    android:padding="@dimen/dp_20"
+                    android:text="@string/private_key_war_hint"
+                    android:textColor="@color/color_FFFF3750"
+                    android:textSize="@dimen/text_14_sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/dp_241"
+                    android:layout_height="@dimen/dp_241"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:background="@drawable/shape_bg_gray_radius_8">
+
+                    <ImageView
+                        android:id="@+id/iv_qrcode"
+                        android:layout_width="@dimen/dp_199"
+                        android:layout_height="@dimen/dp_199"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_hide"
+                        android:layout_width="@dimen/dp_199"
+                        android:layout_height="@dimen/dp_199"
+                        android:background="@color/color_FFF6F8FA"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <View
+                            android:id="@+id/view_line"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@mipmap/icon_bg_qrcode"
+                            tools:layout_editor_absoluteX="0dp"
+                            tools:layout_editor_absoluteY="0dp" />
+
+                        <ImageView
+                            android:id="@+id/iv_address_eye"
+                            android:layout_width="@dimen/dp_52"
+                            android:layout_height="@dimen/dp_52"
+                            android:layout_marginTop="@dimen/dp_45"
+                            android:src="@mipmap/icon_address_eye_off"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_tip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_3"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:layout_marginEnd="@dimen/dp_3"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:gravity="center"
+                            android:text="@string/export_private_key_tip"
+                            android:textColor="@color/color_FFA8ACB0"
+                            android:textSize="@dimen/text_14_sp"
+                            app:layout_constraintTop_toBottomOf="@+id/iv_address_eye" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_address_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/dp_4"
+                    android:textColor="@color/color_FF44494F"
+                    android:textSize="@dimen/text_14_sp"
+                    tools:text="L1EQW2Vn1EhnycEKpkxqMStUXoD4ZKe2mbFKbXAvfCs26ifN58vL" />
+
+                <TextView
+                    android:id="@+id/tv_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_52"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_48"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_44"
+                    android:background="@drawable/btn_normal"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center"
+                    android:text="@string/copy_private_key"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14_sp" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</layout>

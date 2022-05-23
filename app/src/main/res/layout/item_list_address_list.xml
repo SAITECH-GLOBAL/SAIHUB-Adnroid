@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_base"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        android:background="@drawable/shape_bg_gray_radius_8">
+
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginStart="@dimen/dp_16"
+            android:background="@drawable/shape_bg_manager_address_radius4"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:textColor="@color/color_FF005F6F"
+            android:textSize="@dimen/text_14_sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="166dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="middle"
+            android:fontFamily="@font/montserrat_medium"
+            android:singleLine="true"
+            android:layout_marginStart="@dimen/dp_8"
+            android:text="3PqEwsY3PqEwsYkVbkHPmw3PqEwsYkVbkHPmw3PqEwsYkVbkHPmwkVbkHPmw"
+            android:textColor="@color/color_FF090E16"
+            android:textSize="@dimen/text_14_sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_number"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_export_privatekey"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginEnd="@dimen/dp_6"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/icon_export_private_key"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

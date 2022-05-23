@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.activity.wallet.manager.WalletManagerActivity">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:title_text="@string/wallet_settings" />
+
+        <LinearLayout
+            android:id="@+id/ll_manager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:visibility="visible"
+            android:visibility="visible">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_backup_private_key_or_mnemonic"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:background="@drawable/shape_bg_gray_radius_8">
+
+                <TextView
+                    android:id="@+id/tv_backup_private_key_or_mnemonic_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/backup_recovery_phrase"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_arrows_1"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:src="@mipmap/icon_arrows_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_modify_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:background="@drawable/shape_bg_gray_radius_8">
+
+                <TextView
+                    android:id="@+id/tv_modify_password_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/modify_password"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/iv_arrows_unit"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:src="@mipmap/icon_arrows_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_touch_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:background="@drawable/shape_bg_gray_radius_8">
+
+                <TextView
+                    android:id="@+id/tv_address_book_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/touch_id"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_touchid_fing"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:src="@mipmap/icon_switch_open"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:primaryColor="@color/color_FF32D74B" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_passphrase"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:background="@drawable/shape_bg_gray_radius_8">
+
+                <TextView
+                    android:id="@+id/tv_passphrase_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/passphrase"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/iv_arrows_unlock_setting"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:src="@mipmap/icon_arrows_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_address_manager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:background="@drawable/shape_bg_gray_radius_8">
+
+                <TextView
+                    android:id="@+id/tv_address_manager_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/address_manager"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/iv_arrows_app_version"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:src="@mipmap/icon_arrows_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_44"
+            android:background="@drawable/shape_bg_red_radius_8"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:text="@string/delete_wallet"
+            android:textColor="@color/color_FFFF3750" />
+
+    </LinearLayout>
+</layout>

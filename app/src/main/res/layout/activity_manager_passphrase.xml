@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.activity.wallet.manager.ManagerPassphraseActivity">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:title_text="@string/add_passphrase" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/please_input_a_passphrase"
+                    android:textColor="@color/color_FF090E16"
+                    android:textSize="@dimen/text_24_sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:lineSpacingExtra="@dimen/dp_3"
+                    android:text="@string/add_passphrase_hint2"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+
+                <com.linktech.saihub.view.sys.SwitchEditText
+                    android:id="@+id/sw_et_phassphrase1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    app:et_text_size="14"
+                    app:front_desc="false"
+                    app:is_password="true"
+                    app:switch_hint="@string/add_phassphrase_et_hint1" />
+
+                <com.linktech.saihub.view.sys.SwitchEditText
+                    android:id="@+id/sw_et_phassphrase2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    app:et_text_size="14"
+                    app:front_desc="false"
+                    app:is_password="true"
+                    app:switch_hint="@string/enter_passphrase_again" />
+
+                <TextView
+                    android:id="@+id/tv_error_hint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="@color/color_FFFF3750"
+                    android:textSize="@dimen/text_14_sp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/view_line"
+                    tools:text="@string/password_error_try_again"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:lineSpacingExtra="@dimen/dp_3"
+                    android:text="@string/add_passphrase_hint3"
+                    android:textColor="@color/color_FF686F7C"
+                    android:textSize="@dimen/text_12_sp" />
+
+                <TextView
+                    android:id="@+id/tv_confrim"
+                    style="@style/btn_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_52"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_80"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:background="@drawable/btn_normal"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:text="@string/confirm" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

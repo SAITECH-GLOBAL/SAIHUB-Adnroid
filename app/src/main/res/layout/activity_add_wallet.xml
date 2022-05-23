@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:title_text="@string/add_wallet" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dp_20"
+            android:paddingEnd="@dimen/dp_20">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20">
+
+                <TextView
+                    style="@style/text_gray_normal_bold"
+                    android:text="@string/wallet_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_wallet_name"
+                    style="@style/text_gray_normal_bold"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:textColor="@color/color_FF6D778B"
+                    android:textSize="@dimen/text_20_sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="BTC-sdsd" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/text_gray_normal_bold"
+                    android:text="@string/set_password"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.linktech.saihub.view.sys.PasswordStrengthView
+                    android:id="@+id/psv_pwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_password"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.linktech.saihub.view.sys.SwitchEditText
+                android:id="@+id/et_wallet_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:switch_hint="@string/pwd_tip_0" />
+
+            <com.linktech.saihub.view.sys.SwitchEditText
+                android:id="@+id/et_wallet_password_repeat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                app:switch_hint="@string/pwd_tip_1" />
+
+            <TextView
+                style="@style/text_gray_normal_bold"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/address_type" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb_native"
+                    style="@style/rb_normal_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_60"
+                    android:drawableEnd="@drawable/cb_rb"
+                    android:gravity="start|center_vertical"
+                    android:paddingStart="@dimen/dp_16"
+                    android:paddingEnd="@dimen/dp_16"
+                    android:text="@string/native_segWit"
+                    android:textSize="@dimen/text_14_sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_nested"
+                    style="@style/rb_normal_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_60"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:drawableEnd="@drawable/cb_rb"
+                    android:gravity="start|center_vertical"
+                    android:paddingStart="@dimen/dp_16"
+                    android:paddingEnd="@dimen/dp_16"
+                    android:text="@string/nested_segWit"
+                    android:textSize="@dimen/text_14_sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_42"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cb_agreement"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:button="@drawable/cb_create"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_agree_tip"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/text_black_normal"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:text="@string/privacy_tip"
+                    android:textColor="@color/color_FF44494F"
+                    android:textSize="@dimen/text_12_sp" />
+
+                <TextView
+                    android:id="@+id/tv_term"
+                    style="@style/text_black_normal_bold"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:text="@string/privacy_service"
+                    android:textColor="@color/color_FF005F6F"
+                    android:textSize="@dimen/text_12_sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_create"
+                style="@style/btn_normal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@drawable/btn_normal"
+                android:enabled="false"
+                android:text="@string/create"
+                android:textSize="@dimen/text_14_sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip" />
+
+            <TextView
+                android:id="@+id/tv_import"
+                style="@style/text_black_normal_bold"
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="@dimen/dp_30"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center"
+                android:text="@string/import_wallet"
+                android:textColor="@color/color_FF005F6F" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

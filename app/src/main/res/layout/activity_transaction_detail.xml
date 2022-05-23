@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/tb_detail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title_text="@string/details" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            style="@style/text_black_normal"
+            android:layout_height="@dimen/dp_22"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:textColor="@color/color_FF005F6F"
+            app:layout_constraintBottom_toBottomOf="@+id/tb_detail"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tb_detail">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_num"
+                    style="@style/text_black_num_normal_bold"
+                    android:layout_marginBottom="@dimen/dp_2"
+                    android:textColor="@color/color_FF005F6F"
+                    android:textSize="@dimen/text_48_sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tb_detail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="1.100003" />
+
+                <TextView
+                    android:id="@+id/tv_coin"
+                    style="@style/text_black_normal_bold"
+                    android:layout_marginBottom="@dimen/dp_2"
+                    android:textColor="@color/color_FF005F6F"
+                    app:layout_constraintBottom_toBottomOf="@+id/tb_detail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="BTC" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_convert"
+                style="@style/text_black_num_normal"
+                android:layout_marginTop="@dimen/dp_12"
+                android:textColor="@color/color_FF005F6F"
+                android:textSize="@dimen/text_16_sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tb_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="$ 300000" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                style="@style/text_black_normal"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:textColor="@color/color_FF686F7C"
+                app:layout_constraintBottom_toBottomOf="@+id/tb_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="bc1qj9pey2kjezlxjsuc06340ca3yp7whtnyxpv4ju" />
+
+            <TextView
+                android:id="@+id/tv_fee"
+                style="@style/text_black_num_normal"
+                android:layout_marginTop="@dimen/dp_12"
+                android:textColor="@color/color_FF005F6F"
+                android:textSize="@dimen/text_12_sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tb_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Fee:0.00000584BTC($0.25)" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingStart="@dimen/dp_20"
+                android:paddingEnd="@dimen/dp_20">
+
+                <LinearLayout
+                    android:id="@+id/ll_success"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_64"
+                    android:background="@color/white"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/dp_20"
+                    android:paddingEnd="@dimen/dp_20"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_132"
+                        android:layout_height="@dimen/dp_93"
+                        android:src="@mipmap/icon_op_success" />
+
+                    <Button
+                        android:id="@+id/btn_next"
+                        style="@style/btn_normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_52"
+                        android:layout_marginTop="@dimen/dp_67"
+                        android:background="@drawable/btn_normal"
+                        android:text="@string/next" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/gp_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="et_wallet_password,btn_send" />
+
+                <com.linktech.saihub.view.sys.SwitchEditText
+                    android:id="@+id/et_wallet_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:switch_hint="@string/enter_pwd" />
+
+                <Button
+                    android:id="@+id/btn_send"
+                    style="@style/btn_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_52"
+                    android:layout_marginTop="@dimen/dp_134"
+                    android:background="@drawable/btn_normal"
+                    android:enabled="false"
+                    android:text="@string/send_now"
+                    android:textSize="@dimen/text_14_sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_wallet_password" />
+
+
+                <ImageView
+                    android:id="@+id/iv_fingerprint"
+                    android:layout_width="@dimen/dp_259"
+                    android:layout_height="@dimen/dp_259"
+                    android:src="@mipmap/icon_fingerprint"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <WebView
+            android:id="@+id/wv_js"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

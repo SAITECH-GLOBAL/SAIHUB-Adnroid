@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+
+    <data>
+
+        <variable
+            name="m"
+            type="com.linktech.saihub.db.bean.TransferServerBean" />
+
+        <import type="com.linktech.saihub.util.StringUtils" />
+
+        <import type="com.linktech.saihub.util.DateUtils" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52"
+        android:layout_marginTop="@dimen/dp_8"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingEnd="@dimen/dp_20">
+
+        <LinearLayout
+            android:id="@+id/ll_type"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:background="@drawable/shape_in"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_type"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                tools:src="@mipmap/icon_in" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_num"
+            style="@style/text_black_num_normal_bold"
+            android:text="@{m.type==1?'+'+m.amount:'-'+m.amount }"
+            android:textColor="@color/color_FF00C873"
+            android:textSize="@dimen/text_18_sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="+0.00031" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            style="@style/text_black_normal_bold"
+            android:layout_marginStart="@dimen/dp_13"
+            android:gravity="end"
+            android:singleLine="true"
+            android:textColor="@color/color_FF090E16"
+            app:layout_constraintBottom_toTopOf="@id/tv_time"
+            app:layout_constraintStart_toEndOf="@+id/ll_type"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            style="@style/text_black_num_normal"
+            android:layout_marginTop="@dimen/dp_3"
+            android:text="@{DateUtils.getSimpleTimeFormat(m.timestamp,DateUtils.DATE_FORMAT_20)}"
+            android:textColor="@color/color_BF000000"
+            android:textSize="@dimen/text_12_sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_address"
+            app:layout_constraintTop_toBottomOf="@id/tv_address"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

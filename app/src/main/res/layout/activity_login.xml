@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true">
+
+        <TextView
+            android:id="@+id/tv_login_type"
+            style="@style/text_black_normal"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:text="@string/login_touch"
+            android:textColor="@color/color_FF005F6F"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_sai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_95"
+            android:src="@mipmap/icon_sai_logo_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_app_name"
+            style="@style/text_black_normal_bold"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/app_name_case"
+            android:textSize="@dimen/text_24_sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_sai" />
+
+        <com.linktech.saihub.view.ed.SplitEditTextView
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_40"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:inputType="number"
+            app:borderColor="@color/color_FFE8EBEF"
+            app:circleRadius="@dimen/dp_24"
+            app:contentNumber="6"
+            app:contentShowMode="password"
+            app:corner_size="@dimen/dp_8"
+            app:cursorColor="@color/color_FF48ADC3"
+            app:inputBoxStyle="singleBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_app_name"
+            app:pasContentColor="@color/color_FF48ADC3"
+            app:spaceSize="@dimen/dp_19" />
+
+        <ImageView
+            android:id="@+id/iv_fingerprint"
+            android:layout_width="@dimen/dp_259"
+            android:layout_height="@dimen/dp_259"
+            android:layout_marginTop="@dimen/dp_140"
+            android:src="@mipmap/icon_fingerprint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_app_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

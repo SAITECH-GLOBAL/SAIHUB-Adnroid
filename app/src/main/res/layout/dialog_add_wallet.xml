@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_white_radius_16"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_30"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/text_black_normal_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_32"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="@dimen/dp_6"
+            android:paddingStart="@dimen/dp_24"
+            android:paddingEnd="@dimen/dp_24"
+            android:text="@string/add_wallet_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_24_sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_tip"
+            style="@style/text_black_normal"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_14"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="@dimen/dp_5"
+            android:text="@string/add_wallet_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14_sp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_20">
+
+            <Button
+                android:id="@+id/btn_skip"
+                style="@style/btn_normal"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_40"
+                android:background="@drawable/shape_bt_str_005f6f_radius_26"
+                android:text="@string/skip_desc"
+                android:textColor="@color/color_FF005F6F"
+                app:layout_constraintEnd_toStartOf="@+id/btn_create"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_create"
+                style="@style/btn_normal"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="@dimen/dp_20"
+                android:background="@drawable/btn_normal"
+                android:text="@string/create"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_skip"
+                app:layout_constraintTop_toTopOf="@id/btn_skip" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.activity.wallet.manager.ManagerAddressActivity">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:title_text="" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/verify_pwd_address_export_key_hint1"
+            android:textColor="@color/color_FF090E16"
+            android:textSize="@dimen/text_24_sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:fontFamily="@font/montserrat_regular"
+            android:lineSpacingExtra="@dimen/dp_4"
+            android:text="@string/verify_pwd_address_export_key_hint2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14_sp" />
+
+        <com.linktech.saihub.view.sys.SwitchEditText
+            android:id="@+id/sw_et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_20"
+            app:et_text_size="14"
+            app:front_desc="false"
+            app:is_password="true"
+            app:switch_hint="@string/enter_password" />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_80"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/btn_normal"
+            android:enabled="false"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center"
+            android:text="@string/confirm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_14_sp" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_6"
+            android:fontFamily="@font/montserrat_medium"
+            android:padding="@dimen/dp_10"
+            android:text="@string/cancel"
+            android:textColor="@color/color_FF005F6F"
+            android:textSize="@dimen/text_14_sp" />
+    </LinearLayout>
+
+</layout>

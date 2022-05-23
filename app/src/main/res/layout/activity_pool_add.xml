@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.poll.PoolAddActivity">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:title_text="@string/add_observer_link" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/remark_name"
+            android:textColor="@color/color_FF686F7C"
+            android:textSize="@dimen/text_14_sp" />
+
+
+        <com.linktech.saihub.view.ed.ClearEditText
+            android:id="@+id/et_remark_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@null"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="@string/enter_the_remark_name"
+            android:inputType="none"
+            android:maxLength="30"
+            android:textColor="@color/black"
+            android:textColorHint="@color/color_edit_hint"
+            android:textSize="@dimen/text_14_sp"
+            tools:text="" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@color/color_1F000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:text="@string/poll_url"
+            android:textColor="@color/color_FF686F7C"
+            android:textSize="@dimen/text_14_sp" />
+
+        <com.linktech.saihub.view.ed.FontEditText
+            android:id="@+id/et_url"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_112"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/shape_bg_edit_add_poll"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="top|left"
+            android:hint="@string/poll_add_url_hint"
+            android:inputType="none"
+            android:padding="@dimen/dp_12"
+            android:textColor="@color/black"
+            android:textColorHint="@color/color_edit_hint"
+            android:textSize="@dimen/text_14_sp"
+            tools:text="" />
+
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_80"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/btn_normal"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="@string/save"
+            android:textColor="#ffffffff"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</layout>

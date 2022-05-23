@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_FFF6F8FA"
+        android:fitsSystemWindows="false"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_bg_record"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/tb_record"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            android:layout_marginTop="@dimen/dp_30"
+            app:bgcolor="@color/transparent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:left_icon="@mipmap/icon_arrow_back_white"
+            app:titlecolor="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_balance"
+            style="@style/text_black_num_normal_bold"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tb_record"
+            tools:text="235.00" />
+
+        <TextView
+            android:id="@+id/tv_convert"
+            style="@style/text_black_normal_bold"
+            android:layout_marginTop="@dimen/dp_8"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/tv_balance"
+            app:layout_constraintTop_toBottomOf="@+id/tv_balance"
+            tools:text="≈$2977819.98" />
+
+        <com.angcyo.tablayout.DslTabLayout
+            android:id="@+id/tb_record_type"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_64"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/shape_white_radius_8"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_bg"
+            app:tab_default_index="0"
+            app:tab_deselect_color="@color/color_FF6D778B"
+            app:tab_indicator_anim="true"
+            app:tab_indicator_radius="1.5dp"
+            app:tab_indicator_shape="RECTANGLE"
+            app:tab_indicator_solid_color="@color/color_FF005F6F"
+            app:tab_indicator_style="STYLE_BOTTOM"
+            app:tab_indicator_width_offset="-65dp"
+            app:tab_indicator_y_offset="6dp"
+            app:tab_select_color="@color/color_FF005F6F"
+            app:tab_text_max_size="@dimen/text_14_sp"
+            app:tab_text_min_size="@dimen/text_14_sp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_50"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="@string/record_all"
+                app:layout_tab_weight="0.25" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_50"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="@string/record_out"
+                app:layout_tab_weight="0.25" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_50"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="@string/record_in"
+                app:layout_tab_weight="0.25" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_50"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="@string/record_failed"
+                app:layout_tab_weight="0.25" />
+        </com.angcyo.tablayout.DslTabLayout>
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/srl_record"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tb_record_type">
+
+            <com.linktech.saihub.view.LiteRefreshHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_record"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:itemCount="16"
+                tools:listitem="@layout/item_record" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        <Button
+            android:id="@+id/btn_receive"
+            style="@style/btn_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_52"
+            android:layout_marginBottom="@dimen/dp_28"
+            android:background="@drawable/shape_fffdaeff3_radius_32"
+            android:drawableStart="@mipmap/icon_receive"
+            android:gravity="center"
+            android:minWidth="@dimen/dp_136"
+            android:paddingStart="@dimen/dp_30"
+            android:paddingEnd="@dimen/dp_30"
+            android:text="@string/receive"
+            android:textColor="@color/color_FF005F6F"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_send"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_send"
+            style="@style/btn_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_52"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_28"
+            android:background="@drawable/shape_fffdaeff3_radius_32"
+            android:drawableStart="@mipmap/icon_send"
+            android:gravity="center"
+            android:minWidth="@dimen/dp_136"
+            android:paddingStart="@dimen/dp_30"
+            android:paddingEnd="@dimen/dp_30"
+            android:text="@string/send"
+            android:textColor="@color/color_FF005F6F"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/btn_receive" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

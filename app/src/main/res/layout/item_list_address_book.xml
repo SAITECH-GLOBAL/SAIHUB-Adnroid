@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_gray_radius_8"
+        android:padding="@dimen/dp_16"
+        android:paddingStart="@dimen/dp_16"
+        android:paddingTop="@dimen/dp_23"
+        android:paddingEnd="@dimen/dp_16"
+        android:paddingBottom="@dimen/dp_23">
+
+        <TextView
+            android:id="@+id/tv_address_name"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat_bold"
+            android:singleLine="true"
+            android:layout_marginEnd="@dimen/dp_20"
+            app:layout_constraintEnd_toStartOf="@+id/iv_logo"
+            android:textColor="@color/color_FF090E16"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Bill Address" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="@dimen/dp_56"
+            android:ellipsize="middle"
+            android:fontFamily="@font/montserrat_regular"
+            android:singleLine="true"
+            android:textColor="@color/color_FF6D778B"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_logo"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_address_name"
+            tools:text="3s1dfsdfssdfsf95csdfsf95csdfsf95csdfsf95csdfsf95cf95cbcsfsaew" />
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="@dimen/dp_42"
+            android:layout_height="@dimen/dp_42"
+            android:src="@mipmap/icon_address_btc_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_address"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

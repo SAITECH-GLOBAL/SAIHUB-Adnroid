@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/wallet_fragment"
+        android:enabled="true"
+        android:icon="@drawable/selector_main_menu_wallet"
+        android:title="@string/main_item_wallet"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/pool_fragment"
+        android:enabled="true"
+        android:icon="@drawable/selector_main_menu_poll"
+        android:title="@string/main_item_pool"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/power_fragment"
+        android:enabled="true"
+        android:icon="@drawable/selector_main_menu_power"
+        android:title="@string/main_item_power"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/settings_fragment"
+        android:enabled="true"
+        android:icon="@drawable/selector_main_menu_setting"
+        android:title="@string/main_item_settings"
+        app:showAsAction="ifRoom" />
+</menu>

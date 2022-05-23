@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_dialog"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.MainWalletFragment">
+
+        <ImageView
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_8"
+            android:src="@mipmap/icon_bottom_dialog_top_logo" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_edit_list"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_list_dialog_edit" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60" />
+    </LinearLayout>
+</layout>

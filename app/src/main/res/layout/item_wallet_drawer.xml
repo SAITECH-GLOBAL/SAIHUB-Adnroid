@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+
+    <data>
+
+        <variable
+            name="m"
+            type="com.linktech.saihub.entity.databinding.Phrase" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_78"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:background="@mipmap/icon_bg_drawer_wallet"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingEnd="@dimen/dp_20">
+
+        <ImageView
+            android:id="@+id/iv_sel"
+            android:layout_width="@dimen/dp_14"
+            android:layout_height="@dimen/dp_18"
+            android:src="@mipmap/icon_wallet_select"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/text_black_normal_bold"
+            android:gravity="end"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/tv_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="BTC-dcds" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            style="@style/text_black_num_normal_bold"
+            android:layout_marginTop="@dimen/dp_5"
+            android:textColor="@color/color_BFFFFFFF"
+            android:textSize="@dimen/text_12_sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="bc1a9e91e9..25cbC26D" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

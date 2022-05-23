@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_poll_fragment_item_list"
+        android:padding="@dimen/dp_16">
+
+        <ImageView
+            android:id="@+id/iv_power_logo"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:src="@mipmap/icon_power_item_list_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_power_set"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:background="@drawable/shape_bg_poll_set"
+            android:padding="@dimen/dimen_6"
+            android:src="@mipmap/icon_set_pool"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_power_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:fontFamily="@font/d_dinexp_bold"
+            android:textColor="@color/color_FF6D778B"
+            android:textSize="@dimen/text_12_sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_power_name"
+            tools:text="7050603707010178277" />
+
+        <TextView
+            android:id="@+id/tv_power_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/color_FF090E16"
+            android:textSize="@dimen/text_20_sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_power_logo"
+            tools:text="Bill’s Power" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

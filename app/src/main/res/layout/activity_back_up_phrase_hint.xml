@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.activity.wallet.manager.BackUpPhraseHintActivity">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46" />
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/write_down_recovery_phrase"
+            android:textColor="@color/color_FF090E16"
+            android:textSize="@dimen/text_24_sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/backup_phrase_hint1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14_sp" />
+
+        <TextView
+            android:id="@+id/tv_continue"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_80"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/btn_normal"
+            android:gravity="center"
+            android:text="@string/continue_desc"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_14_sp" />
+    </LinearLayout>
+</layout>

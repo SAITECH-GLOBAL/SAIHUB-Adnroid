@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="transparent_33">#33FFFFFF</color>
+    <color name="transparent_66">#66000000</color>
+    <color name="transparent_gray">#1A000000</color>
+
+    <color name="color_edit_hint">#FFA8ACB0</color>
+
+    <color name="color_B3000000">#B3000000</color>
+    <color name="color_FF48ADC3">#FF48ADC3</color>
+    <color name="color_FFE8EBEF">#FFE8EBEF</color>
+    <color name="color_FF32C7D6">#FF32C7D6</color>
+    <color name="color_FF005F6F">#FF005F6F</color>
+    <color name="color_FFB4B8C0">#FFB4B8C0</color>
+    <color name="color_FF090E16">#FF090E16</color>
+    <color name="color_FF6D778B">#FF6D778B</color>
+    <color name="color_FFFF3750">#FFFF3750</color>
+    <color name="color_1F000000">#1F000000</color>
+    <color name="color_FF44494F">#FF44494F</color>
+    <color name="color_FFF6F8FA">#FFF6F8FA</color>
+    <color name="color_FF4670E6">#FF4670E6</color>
+    <color name="color_FF00C873">#FF00C873</color>
+    <color name="color_FF686F7C">#FF686F7C</color>
+    <color name="color_FFA8ACB0">#FFA8ACB0</color>
+    <color name="color_BFFFFFFF">#BFFFFFFF</color>
+    <color name="color_0F090E16">#0F090E16</color>
+    <color name="color_FFECF6F9">#FFECF6F9</color>
+    <color name="color_FFDAEFF3">#FFDAEFF3</color>
+
+    <color name="color_1A00C873">#1A00C873</color>
+    <color name="color_1AFF3750">#1AFF3750</color>
+    <color name="color_1A026FED">#1A026FED</color>
+    <color name="color_BF000000">#BF000000</color>
+    <color name="color_1444494F">#1444494F</color>
+    <color name="color_FF3750FF">#FF3750FF</color>
+    <color name="color_FF32D74B">#FF32D74B</color>
+    <color name="color_FFECF6F9FF">#FFECF6F9</color>
+    <color name="color_FF026FED">#FF026FED</color>
+    <color name="color_FF3E475A">#ff3e475a</color>
+    <color name="color_a6000000">#a6000000</color>
+</resources>

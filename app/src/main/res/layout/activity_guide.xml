@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_FF32C7D6"
+        android:fitsSystemWindows="false"
+        tools:context=".ui.activity.MainActivity">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_bg_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_sai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_184"
+            android:src="@mipmap/icon_sai_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/text_black_normal_bold"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_24_sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_sai" />
+
+        <Button
+            android:id="@+id/btn_agree"
+            style="@style/btn_normal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:background="@drawable/shape_white_radius_26"
+            android:text="@string/next"
+            android:textColor="@color/color_FF005F6F"
+            app:layout_constraintBottom_toTopOf="@+id/cl_agree"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_agree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_34"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <CheckBox
+                android:id="@+id/cb_agreement"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:button="@drawable/cb_login"
+                android:checked="false"
+                app:layout_constraintEnd_toStartOf="@+id/tv_agree_tip"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_agree_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_4"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/agreement_tip"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_12_sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cb_agreement"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cb_agreement"
+                app:layout_constraintTop_toTopOf="@+id/cb_agreement" />
+
+            <TextView
+                android:id="@+id/tv_agreement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_4"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/agreement"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_12_sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cb_agreement" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        <com.airbnb.lottie.LottieAnimationView-->
+        <!--            android:layout_width="@dimen/dp_81"-->
+        <!--            android:layout_height="@dimen/dp_81"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:lottie_autoPlay="true"-->
+        <!--            app:lottie_loop="true"-->
+        <!--            app:lottie_rawRes="@raw/loading" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/tb_transfer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title_text="@string/transfer" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dp_20"
+            android:paddingEnd="@dimen/dp_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tb_transfer">
+
+            <TextView
+                style="@style/text_gray_normal_bold"
+                android:text="@string/to"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.linktech.saihub.view.sys.SwitchEditText
+                    android:id="@+id/et_address"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    app:is_password="false"
+                    app:is_show_line="false"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_scan"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:switch_hint="@string/et_address_hint" />
+
+                <ImageView
+                    android:id="@+id/iv_address_book"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:src="@mipmap/icon_address_book"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_scan"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_12"
+                    android:src="@mipmap/icon_transfer_scan"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_address_book"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@color/color_1F000000"
+                    app:layout_constraintTop_toBottomOf="@+id/et_address" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                style="@style/text_gray_normal_bold"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.linktech.saihub.view.sys.SwitchEditText
+                android:id="@+id/et_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:et_text_color="@color/color_FF005F6F"
+                app:is_password="false"
+                app:switch_hint="@string/et_amount_hint" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8">
+
+                <TextView
+                    style="@style/text_black_small"
+                    android:text="@string/balance"
+                    android:textColor="@color/color_FF44494F"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_balance"
+                    style="@style/text_black_num_normal_bold"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_4"
+                    android:textColor="@color/color_FF44494F"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_coin"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_coin"
+                    app:layout_constraintTop_toTopOf="@id/tv_coin"
+                    tools:text="35.41" />
+
+                <TextView
+                    android:id="@+id/tv_coin"
+                    style="@style/text_black_normal_bold"
+                    android:textColor="@color/color_FF44494F"
+                    android:textSize="@dimen/text_12_sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="BTC" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                style="@style/text_gray_normal_bold"
+                android:layout_marginTop="@dimen/dp_39"
+                android:text="@string/miner_fee"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_fee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:overScrollMode="never" />
+
+            <Button
+                android:id="@+id/btn_next"
+                style="@style/btn_normal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:layout_marginTop="@dimen/dp_70"
+                android:background="@drawable/btn_normal"
+                android:enabled="false"
+                android:text="@string/next"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

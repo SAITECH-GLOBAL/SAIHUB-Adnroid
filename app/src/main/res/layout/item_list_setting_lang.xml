@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_base"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_52">
+
+        <TextView
+            android:id="@+id/tv_lang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="English"
+            android:textColor="@color/color_FF005F6F"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_select"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/icon_cb_lang_select" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

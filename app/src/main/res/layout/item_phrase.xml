@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+
+    <data>
+
+        <variable
+            name="m"
+            type="com.linktech.saihub.entity.databinding.Phrase" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/cl_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dp_16">
+
+        <TextView
+            style="@style/text_black_num_normal_bold"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@{String.valueOf(m.index)+'.'}"
+            android:textColor="@color/color_FF005F6F"
+            android:textSize="@dimen/text_32_sp"
+            tools:text="1." />
+
+        <TextView
+            style="@style/text_black_normal_bold"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@{m.content}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_32_sp"
+            tools:text="flight" />
+    </LinearLayout>
+
+</layout>

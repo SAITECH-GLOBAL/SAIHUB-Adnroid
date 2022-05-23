@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.poll.PoolAddActivity">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:title_text="@string/add_address_title" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_24">
+
+            <TextView
+                android:id="@+id/tv_foundation_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/foundation"
+                android:textColor="@color/color_FF686F7C"
+                android:textSize="@dimen/text_14_sp" />
+
+            <TextView
+                android:id="@+id/tv_btc"
+                style="@style/text_gray_normal_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="BTC"
+                android:textColor="@color/color_FF686F7C"
+                android:textSize="@dimen/text_20_sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/name"
+            android:textColor="@color/color_FF686F7C"
+            android:textSize="@dimen/text_14_sp"
+             />
+
+
+        <com.linktech.saihub.view.ed.ClearEditText
+            android:id="@+id/et_address_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@null"
+            android:fontFamily="@font/montserrat_medium"
+            android:hint="@string/please_enter_a_name"
+            android:inputType="none"
+            android:maxLength="30"
+            android:textColor="@color/black"
+            android:textColorHint="@color/color_edit_hint"
+            android:textSize="@dimen/text_14_sp"
+            tools:text="" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@color/color_1F000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/address"
+            android:textColor="@color/color_FF686F7C"
+            android:textSize="@dimen/text_14_sp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20">
+
+            <com.linktech.saihub.view.ed.ClearEditText
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_46"
+                android:background="@null"
+                android:fontFamily="@font/montserrat_medium"
+                android:hint="@string/scan_or_paste_wallet_address"
+                android:inputType="none"
+                android:paddingEnd="@dimen/dp_50"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/color_edit_hint"
+                android:textSize="@dimen/text_14_sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="" />
+
+            <ImageView
+                android:id="@+id/iv_address_scan"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:padding="@dimen/dp_10"
+                android:src="@mipmap/icon_address_scan"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@color/color_1F000000" />
+
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_80"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/btn_normal"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</layout>

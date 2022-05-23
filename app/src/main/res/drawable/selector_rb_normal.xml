@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 未点击背景图-->
+    <item android:drawable="@drawable/shape_rb_radius_8" android:state_checked="false" />
+    <!-- 点击背景图-->
+    <item android:drawable="@drawable/shape_rb_radius_8_sel" android:state_checked="true" />
+</selector>
