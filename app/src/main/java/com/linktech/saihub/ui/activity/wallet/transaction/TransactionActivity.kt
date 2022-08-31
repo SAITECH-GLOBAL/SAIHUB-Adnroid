@@ -74,6 +74,10 @@ class TransactionActivity : BaseActivity(), EasyPermissions.PermissionCallbacks 
         mutableListOf()
     }
 
+    private val toAddress: String? by lazy {
+        intent.getStringExtra(StringConstants.ADDRESS)
+    }
+
     private var tokenBean: TokenInfoBean? = null
 
     private val walletTransactionViewModel by lazy {
@@ -107,6 +111,8 @@ class TransactionActivity : BaseActivity(), EasyPermissions.PermissionCallbacks 
 
         tokenBean = intent.getSerializableExtra(StringConstants.TOKEN_DATA) as? TokenInfoBean
         binding?.apply {
+            if (!TextUtils.isEmpty(toAddress))
+                etAddress.setContentText(toAddress)
 
             feeIntentList?.add(FeeEntity())
             feeIntentList?.add(FeeEntity())

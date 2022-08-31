@@ -287,13 +287,13 @@ open class SaiHubApplication : MultiDexApplication() {
                         R.mipmap.app_icon
                     )
                 )
-                .setSmallIcon(R.mipmap.icon_sai_logo_dark).build()
+                .setSmallIcon(R.mipmap.app_icon).build()
         } else {
             val notificationBuilder: NotificationCompat.Builder =
                 NotificationCompat.Builder(linkChainApplication)
                     .setContentTitle(titleStr)
                     .setContentText(contentStr)
-                    .setSmallIcon(R.mipmap.icon_sai_logo_dark)
+                    .setSmallIcon(R.mipmap.app_icon)
                     .setContentIntent(pendingIntent)
                     .setAutoCancel(true)
                     .setOngoing(true)

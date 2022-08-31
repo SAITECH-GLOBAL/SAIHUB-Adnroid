@@ -13,10 +13,11 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_341"
+            android:layout_height="wrap_content"
             android:background="@drawable/shape_white_radius_16"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_30">
 
             <TextView
                 android:id="@+id/tv_coin"

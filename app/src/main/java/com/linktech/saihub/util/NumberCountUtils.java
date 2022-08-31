@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.List;
 
 
 public class NumberCountUtils {
@@ -385,6 +386,65 @@ public class NumberCountUtils {
     }
 
     /**
+     * 闪电钱包法币折合
+     * 两数相乘 保留6位小数 不补零
+     *
+     * @param num  单位聪
+     * @param rate
+     * @return
+     */
+    public static String getLNConvert(String num, String rate) {
+        if (TextUtils.isEmpty(num) || TextUtils.isEmpty(rate)) {
+            return "0";
+        }
+        BigDecimal divide = new BigDecimal(num).divide(new BigDecimal(10).pow(8));
+        BigDecimal multi = divide.multiply(new BigDecimal(rate));
+        BigDecimal bdLast = multi.setScale(6, BigDecimal.ROUND_DOWN);
+        //不补零
+        DecimalFormat df = new DecimalFormat("0");
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+        symbols.setDecimalSeparator('.');
+        df.setDecimalFormatSymbols(symbols);
+//        return df.format(bdLast);
+        return bdLast.compareTo(BigDecimal.ZERO) == 0 ? "0" : bdLast.stripTrailingZeros().toPlainString();
+    }
+
+    /**
+     * 聪转化为BTC
+     *
+     * @param num
+     * @return
+     */
+    public static String transformBTC(String num) {
+        if (TextUtils.isEmpty(num)) {
+            return "0";
+        }
+        BigDecimal divide = new BigDecimal(num).divide(new BigDecimal(10).pow(8));
+        //不补零
+        DecimalFormat df = new DecimalFormat("0");
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+        symbols.setDecimalSeparator('.');
+        df.setDecimalFormatSymbols(symbols);
+//        return df.format(divide);
+        return divide.toPlainString();
+    }
+
+    /**
+     * BTC转化为聪
+     *
+     * @param num
+     * @return
+     */
+    public static String transformSatoshi(String num) {
+        if (TextUtils.isEmpty(num)) {
+            return "0";
+        }
+        BigDecimal multiply = new BigDecimal(num).multiply(new BigDecimal(10).pow(8));
+        return multiply.stripTrailingZeros().toPlainString();
+    }
+
+
+    /**
      * 矿工费
      * 两数相乘
      *
@@ -445,6 +505,37 @@ public class NumberCountUtils {
             // 不足两位小数补0
             return df.format(value) + "B";
         }
+    }
+
+    public static Double getMaxFromList(List<Double> num) {
+        double max = num.get(0);
+        for (int i = 0; i < num.size(); i++) {
+            if (num.get(i) > max) {
+                max = num.get(i);
+            }
+        }
+        return max;
+    }
+
+    public static Double getMinFromList(List<Double> num) {
+        double min = num.get(0);
+        for (int i = 0; i < num.size(); i++) {
+            if (num.get(i) < min) {
+                min = num.get(i);
+            }
+        }
+        return min;
+    }
+
+    //闪电钱包计算预估费用
+    public static String getLnFee(String num) {
+        if (TextUtils.isEmpty(num)) {
+            return "0-0";
+        }
+        BigDecimal sats = new BigDecimal(num);
+        long min = sats.multiply(new BigDecimal("0.003")).setScale(0, BigDecimal.ROUND_DOWN).longValue();
+        long max = sats.multiply(new BigDecimal("0.01")).setScale(0, BigDecimal.ROUND_DOWN).longValue() + 1;
+        return min + "-" + max;
     }
 
 

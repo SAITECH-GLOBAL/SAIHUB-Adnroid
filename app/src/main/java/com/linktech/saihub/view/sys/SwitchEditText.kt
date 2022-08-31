@@ -112,11 +112,19 @@ class SwitchEditText(context: Context, attributeSet: AttributeSet) :
 
     private fun setTextFont(isNotEmpty: Boolean) {
         if (isNotEmpty) {
-            etSwitch?.setTypeface(Typeface.createFromAsset(context.assets,
-                "fonts/montserrat_medium.ttf"))
+            etSwitch?.setTypeface(
+                Typeface.createFromAsset(
+                    context.assets,
+                    "fonts/montserrat_medium.ttf"
+                )
+            )
         } else {
-            etSwitch?.setTypeface(Typeface.createFromAsset(context.assets,
-                "fonts/montserrat_regular.ttf"))
+            etSwitch?.setTypeface(
+                Typeface.createFromAsset(
+                    context.assets,
+                    "fonts/montserrat_regular.ttf"
+                )
+            )
         }
     }
 
@@ -141,5 +149,9 @@ class SwitchEditText(context: Context, attributeSet: AttributeSet) :
 
     fun setContentText(content: String?) {
         etSwitch?.setText(content)
+    }
+
+    fun setHintText(content: String?) {
+        etSwitch?.hint = content
     }
 }

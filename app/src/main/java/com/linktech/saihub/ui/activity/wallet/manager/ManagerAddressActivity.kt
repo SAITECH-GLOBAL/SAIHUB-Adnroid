@@ -1,5 +1,6 @@
 package com.linktech.saihub.ui.activity.wallet.manager
 
+import android.text.TextUtils
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -58,10 +59,13 @@ class ManagerAddressActivity : BaseActivity() {
                     .withString(StringConstants.ADDRESS_SHARE, itemData.childAddress)
                     .navigation()
             }
-
-
         }
-        addressListAdapter?.isShowExport(walletBean?.existType == Constants.EXIST_MNEMONIC)
+        //钱包为助记词类型且passphrase为空时显示导出私钥
+        addressListAdapter?.isShowExport(
+            walletBean?.existType == Constants.EXIST_MNEMONIC && TextUtils.isEmpty(
+                walletBean?.passphrase
+            )
+        )
         binding?.recyAddress?.adapter = addressListAdapter
     }
 

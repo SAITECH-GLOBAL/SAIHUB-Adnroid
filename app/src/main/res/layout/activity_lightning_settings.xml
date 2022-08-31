@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:right_text="@string/save_desc"
+            app:right_text_color="@color/color_FF005F6F"
+            app:right_visiblity="gone"
+            app:title_text="@string/lightning_settings" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dp_20"
+            android:paddingEnd="@dimen/dp_20">
+
+            <TextView
+                style="@style/text_gray_normal_bold"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/wallet_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_wallet_name"
+                style="@style/text_black_normal_bold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_47"
+                android:gravity="center_vertical"
+                app:drawableEndCompat="@mipmap/icon_arrows_gray"
+                tools:text="https" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/color_1F000000" />
+
+            <TextView
+                style="@style/text_gray_normal_bold"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/host"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tv_host"
+                style="@style/text_black_normal_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_47"
+                android:gravity="center_vertical"
+                tools:text="https" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/color_1F000000" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/text_gray_normal_bold"
+                    android:text="@string/set_password"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/sv_pwd"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_20"
+                    android:src="@mipmap/icon_switch_open"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:primaryColor="@color/color_FF32D74B" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_touch_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/text_gray_normal_bold"
+                    android:text="@string/touch_id"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/sv_touch_id"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_20"
+                    android:src="@mipmap/icon_switch_open"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:primaryColor="@color/color_FF32D74B" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_export"
+                style="@style/btn_normal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:layout_marginTop="@dimen/dp_99"
+                android:background="@drawable/btn_normal"
+                android:text="@string/export_desc"
+                android:textSize="@dimen/text_14_sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip" />
+
+            <TextView
+                android:id="@+id/tv_delete"
+                style="@style/text_black_normal_bold"
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="@dimen/dp_30"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center"
+                android:text="@string/delete"
+                android:textColor="@color/color_FFFF3750" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

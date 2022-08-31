@@ -3,9 +3,11 @@ package com.linktech.saihub.base.dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
+import android.view.Window
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.DialogFragment
@@ -27,7 +29,8 @@ open class BaseDrawerDialogFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NORMAL, R.style.custom_full_screen_dialog)
+        setStyle(STYLE_NORMAL, R.style.custom_full_screen_dialog_wallet)
+        dialog?.window?.requestFeature(Window.FEATURE_NO_TITLE)
     }
 
     override fun onStart() {
@@ -38,6 +41,10 @@ open class BaseDrawerDialogFragment : DialogFragment() {
         val window = dialog?.window
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         val params = window?.attributes
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+//            params?.layoutInDisplayCutoutMode =
+//                WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+//        }
         params?.gravity = Gravity.START or Gravity.TOP
         params?.height = PixelUtils.getScreenHeight() + PixelUtils.getStatusBarHeight(activity)
 //            if (ScreenUtils.isShowNavBar(activity))

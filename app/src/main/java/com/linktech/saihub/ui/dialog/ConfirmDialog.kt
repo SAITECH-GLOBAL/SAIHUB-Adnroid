@@ -17,6 +17,7 @@ import com.qmuiteam.qmui.kotlin.onClick
 class ConfirmDialog(
     var titleStr: String? = null,
     var contentStr: String? = null,
+    var contentColor: Int? = null,
     var cancelStr: String? = null,
     var confirmStr: String? = null,
     var isShowBack: Boolean = false
@@ -50,6 +51,9 @@ class ConfirmDialog(
         }
         confirmStr?.let {
             binding?.tvConfirm?.text = confirmStr
+        }
+        contentColor?.let {
+            binding?.tvContent?.setTextColor(contentColor!!)
         }
 
         binding?.tvBackup?.setVisible(isShowBack)

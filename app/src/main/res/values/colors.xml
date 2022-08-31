@@ -42,8 +42,10 @@
     <color name="color_1444494F">#1444494F</color>
     <color name="color_FF3750FF">#FF3750FF</color>
     <color name="color_FF32D74B">#FF32D74B</color>
-    <color name="color_FFECF6F9FF">#FFECF6F9</color>
     <color name="color_FF026FED">#FF026FED</color>
     <color name="color_FF3E475A">#ff3e475a</color>
     <color name="color_a6000000">#a6000000</color>
+    <color name="color_FFF0D6">#FFF0D6</color>
+    <color name="color_414141">#414141</color>
+    <color name="color_FFA53E">#FFA53E</color>
 </resources>

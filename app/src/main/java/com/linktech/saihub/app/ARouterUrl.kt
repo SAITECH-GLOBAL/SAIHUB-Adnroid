@@ -95,12 +95,14 @@ object ARouterUrl {
     /**
      *  交易-多签交易
      */
-    const val WAL_WALLET_TRANSACTION_MULTI_SIGN_ACTIVITY_PATH = "/saihub/wallet/transaction/multi/sign"
+    const val WAL_WALLET_TRANSACTION_MULTI_SIGN_ACTIVITY_PATH =
+        "/saihub/wallet/transaction/multi/sign"
 
     /**
      *  交易-多签交易-详情
      */
-    const val WAL_WALLET_TRANSACTION_MULTI_SIGN_DETAIL_ACTIVITY_PATH = "/saihub/wallet/transaction/multi/sign/detail"
+    const val WAL_WALLET_TRANSACTION_MULTI_SIGN_DETAIL_ACTIVITY_PATH =
+        "/saihub/wallet/transaction/multi/sign/detail"
 
     /**
      *  交易-收款二维码
@@ -130,12 +132,14 @@ object ARouterUrl {
     /**
      * 设置-地址本
      */
-    const val WAL_SAIHUB_WALLET_SETTING_ADDRESS_BOOK_ACTIVITY_PATH = "/saihub/wallet/setting/address/book"
+    const val WAL_SAIHUB_WALLET_SETTING_ADDRESS_BOOK_ACTIVITY_PATH =
+        "/saihub/wallet/setting/address/book"
 
     /**
      * 设置-地址本-add
      */
-    const val WAL_SAIHUB_WALLET_SETTING_ADDRESS_BOOK_ADD_ACTIVITY_PATH = "/saihub/wallet/setting/address/book/add"
+    const val WAL_SAIHUB_WALLET_SETTING_ADDRESS_BOOK_ADD_ACTIVITY_PATH =
+        "/saihub/wallet/setting/address/book/add"
 
     /**
      * 设置-应用锁
@@ -145,12 +149,14 @@ object ARouterUrl {
     /**
      * 设置-应用锁-验证密码
      */
-    const val WAL_SAIHUB_WALLET_SETTING_UNLOCK_PWD_ACTIVITY_PATH = "/saihub/wallet/setting/unlock/pwd"
+    const val WAL_SAIHUB_WALLET_SETTING_UNLOCK_PWD_ACTIVITY_PATH =
+        "/saihub/wallet/setting/unlock/pwd"
 
     /**
      * 设置-appversion
      */
-    const val WAL_SAIHUB_WALLET_SETTING_APPVERSION_ACTIVITY_PATH = "/saihub/wallet/setting/appversion"
+    const val WAL_SAIHUB_WALLET_SETTING_APPVERSION_ACTIVITY_PATH =
+        "/saihub/wallet/setting/appversion"
 
     /**
      * 钱包管理
@@ -160,47 +166,105 @@ object ARouterUrl {
     /**
      * 钱包管理-验证密码
      */
-    const val WAL_SAIHUB_WALLET_WALMANAGER_VERIFY_PWD_ACTIVITY_PATH = "/saihub/wallet/walmanager/verify/pwd"
+    const val WAL_SAIHUB_WALLET_WALMANAGER_VERIFY_PWD_ACTIVITY_PATH =
+        "/saihub/wallet/walmanager/verify/pwd"
 
     /**
      * 钱包管理-备份私钥
      */
-    const val WAL_SAIHUB_WALLET_WALMANAGER_BACKUP_PHRASE_ACTIVITY_PATH = "/saihub/wallet/walmanager/backup/phrase"
+    const val WAL_SAIHUB_WALLET_WALMANAGER_BACKUP_PHRASE_ACTIVITY_PATH =
+        "/saihub/wallet/walmanager/backup/phrase"
 
     /**
      * 钱包管理-管理地址
      */
-    const val WAL_SAIHUB_WALLET_WALMANAGER_ADDRESS_LIST_ACTIVITY_PATH = "/saihub/wallet/walmanager/address/list"
+    const val WAL_SAIHUB_WALLET_WALMANAGER_ADDRESS_LIST_ACTIVITY_PATH =
+        "/saihub/wallet/walmanager/address/list"
 
     /**
      * 钱包管理-管理钱包盐
      */
-    const val WAL_SAIHUB_WALLET_WALMANAGER_PASSPHRASE_ACTIVITY_PATH = "/saihub/wallet/walmanager/passphrase"
+    const val WAL_SAIHUB_WALLET_WALMANAGER_PASSPHRASE_ACTIVITY_PATH =
+        "/saihub/wallet/walmanager/passphrase"
 
     /**
      * 钱包管理-修改密码
      */
-    const val WAL_SAIHUB_WALLET_WALMANAGER_MODIFY_PASSWORD_ACTIVITY_PATH = "/saihub/wallet/walmanager/modify/password"
+    const val WAL_SAIHUB_WALLET_WALMANAGER_MODIFY_PASSWORD_ACTIVITY_PATH =
+        "/saihub/wallet/walmanager/modify/password"
 
     /**
      * 钱包管理-修改密码-重置密码 助记词或者私钥
      */
-    const val WAL_SAIHUB_WALLET_WALMANAGER_RESET_PWD_MNEMONIC_PRIVATEKEY_ACTIVITY_PATH = "/saihub/wallet/walmanager/reset/pwd/mnemonic/privatekey"
+    const val WAL_SAIHUB_WALLET_WALMANAGER_RESET_PWD_MNEMONIC_PRIVATEKEY_ACTIVITY_PATH =
+        "/saihub/wallet/walmanager/reset/pwd/mnemonic/privatekey"
 
     /**
      * 钱包管理-备份私钥-提示
      */
-    const val WAL_SAIHUB_WALLET_WALMANAGER_BACKUP_PHRASE_HINT_ACTIVITY_PATH = "/saihub/wallet/walmanager/backup/phrase/hint"
+    const val WAL_SAIHUB_WALLET_WALMANAGER_BACKUP_PHRASE_HINT_ACTIVITY_PATH =
+        "/saihub/wallet/walmanager/backup/phrase/hint"
 
     /**
      * 钱包管理-管理地址-导出私钥
      */
-    const val WAL_SAIHUB_WALLET_WALMANAGER_ADDRESS_EXPORT_PRIVATEKEY_ACTIVITY_PATH = "/saihub/wallet/walmanager/address/export/privatekey"
+    const val WAL_SAIHUB_WALLET_WALMANAGER_ADDRESS_EXPORT_PRIVATEKEY_ACTIVITY_PATH =
+        "/saihub/wallet/walmanager/address/export/privatekey"
 
     /**
      * 钱包管理-管理地址-私钥显示
      */
-    const val WAL_SAIHUB_WALLET_WALMANAGER_ADDRESS_KEY_ACTIVITY_PATH = "/saihub/wallet/walmanager/address/key"
+    const val WAL_SAIHUB_WALLET_WALMANAGER_ADDRESS_KEY_ACTIVITY_PATH =
+        "/saihub/wallet/walmanager/address/key"
 
+    /**
+     * 添加闪电钱包
+     */
+    const val WAL_LN_WALLET_ADD_ACTIVITY_PATH = "/saihub/wallet/ln/add"
+
+    /**
+     * 导入闪电钱包
+     */
+    const val WAL_LN_WALLET_IMPORT_ACTIVITY_PATH = "/saihub/wallet/ln/import"
+
+    /**
+     * 闪电钱包设置
+     */
+    const val WAL_LN_WALLET_SETTINGS_ACTIVITY_PATH = "/saihub/wallet/ln/settings"
+
+    /**
+     * 闪电钱包设置密码
+     */
+    const val WAL_LN_WALLET_SETTING_PWD_ACTIVITY_PATH = "/saihub/wallet/ln/settings/pwd"
+
+    /**
+     * 创建invoice
+     */
+    const val WAL_LN_WALLET_INVOICE_CREATE_ACTIVITY_PATH = "/saihub/wallet/ln/invoice/create"
+
+    /**
+     * invoice详情
+     */
+    const val WAL_LN_WALLET_INVOICE_DETAIL_ACTIVITY_PATH = "/saihub/wallet/ln/invoice/detail"
+
+    /**
+     * invoice详情
+     */
+    const val WAL_LN_WALLET_LNDHUB_ACTIVITY_PATH = "/saihub/wallet/ln/lndhub"
+
+    /**
+     * 本地钱包列表
+     */
+    const val WAL_LN_WALLET_LIST_ACTIVITY_PATH = "/saihub/wallet/ln/list"
+
+    /**
+     * 闪电钱包转账
+     */
+    const val WAL_LN_WALLET_TRANSACTION_ACTIVITY_PATH = "/saihub/wallet/ln/transaction"
+
+    /**
+     * 闪电钱包转账密码验证页
+     */
+    const val WAL_LN_WALLET_TRANSACTION_CONFIRM_ACTIVITY_PATH = "/saihub/wallet/ln/transaction/confirm"
 
 }

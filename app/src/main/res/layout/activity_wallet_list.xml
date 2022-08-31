@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/tb_wallet_list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title_text="@string/wallet_list" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_wallet"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:paddingTop="@dimen/dp_20"
+            android:paddingStart="@dimen/dp_20"
+            android:paddingEnd="@dimen/dp_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tb_wallet_list" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

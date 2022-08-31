@@ -27,6 +27,7 @@
         android:background="@color/white"
         android:fontFamily="@font/montserrat_regular"
         android:inputType="textPassword"
+        android:textCursorDrawable="@drawable/shape_cursor"
         android:textColor="@color/black"
         android:textColorHint="@color/color_FFA8ACB0"
         android:textSize="@dimen/text_14_sp"

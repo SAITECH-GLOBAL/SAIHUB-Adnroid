@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.linktech.saihub"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.linktech.saihub">
 
     <application
         android:name=".app.SaiHubApplication"
@@ -10,10 +11,11 @@
         android:preserveLegacyExternalStorage="true"
         android:requestLegacyExternalStorage="true"
         android:resizeableActivity="true"
-        android:roundIcon="@mipmap/app_round_icon"
+        android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:replace="android:label">
         <activity
             android:name=".ui.activity.SplashActivity"
             android:exported="true"
@@ -63,7 +65,7 @@
             android:exported="true" />
         <activity
             android:name=".ui.activity.MainActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.login.LoginActivity"
             android:exported="true" />
@@ -145,12 +147,43 @@
             android:name=".ui.activity.wallet.manager.AddressExportKeyActivity"
             android:exported="true" />
         <activity
+            android:name=".ui.activity.wallet.create.AddLightningActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.imp.ImportLightningActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.create.CreateInvoiceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.transaction.ReceiveInvoiceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.create.LightningSettingsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.manager.SetLNPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.transaction.ExportLndHubActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.transaction.WalletListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.transaction.TransactionLightningActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.activity.wallet.transaction.LnTransactionConfirmActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.activity.WebActivity"
             android:exported="true" />
         <activity
             android:name=".ui.activity.WeChatQRCodeActivity"
             android:exported="true"
             android:theme="@style/full_screen" />
+
         <meta-data
             android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="false" />
@@ -165,6 +198,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
     </application>
+
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />

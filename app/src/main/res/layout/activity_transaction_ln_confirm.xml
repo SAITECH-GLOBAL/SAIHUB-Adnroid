@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.linktech.saihub.view.sys.TopBar
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_46"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title_text="" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            style="@style/text_black_normal"
+            android:layout_height="@dimen/dp_22"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:textColor="@color/color_FF005F6F"
+            app:layout_constraintBottom_toBottomOf="@+id/topbar"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_fingerprint"
+            android:layout_width="@dimen/dp_259"
+            android:layout_height="@dimen/dp_259"
+            android:src="@mipmap/icon_fingerprint"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topbar" />
+
+        <LinearLayout
+            android:id="@+id/ll_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topbar">
+
+            <TextView
+                android:id="@+id/tv_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_23"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/verify_password"
+                android:textColor="@color/color_FF686F7C"
+                android:textSize="@dimen/text_14_sp" />
+
+            <com.linktech.saihub.view.sys.SwitchEditText
+                android:id="@+id/et_wallet_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_20"
+                app:et_text_size="14"
+                app:front_desc="false"
+                app:is_password="true"
+                app:switch_hint="@string/enter_password" />
+
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_60"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:background="@drawable/btn_normal"
+                android:enabled="false"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="@string/confirm"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_14_sp" />
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_6"
+                android:fontFamily="@font/montserrat_medium"
+                android:padding="@dimen/dp_10"
+                android:text="@string/cancel"
+                android:textColor="@color/color_FF005F6F"
+                android:textSize="@dimen/text_14_sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

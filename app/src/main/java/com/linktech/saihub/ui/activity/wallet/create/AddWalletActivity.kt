@@ -12,6 +12,7 @@ import com.linktech.saihub.base.BaseActivity
 import com.linktech.saihub.databinding.ActivityAddWalletBinding
 import com.linktech.saihub.db.bean.WalletBean
 import com.linktech.saihub.manager.RateAndLocalManager
+import com.linktech.saihub.ui.dialog.SetWalletNameDialog
 import com.linktech.saihub.util.RegexUtils
 import com.linktech.saihub.util.system.getAgreementUrl
 import com.linktech.saihub.util.system.getRandomName
@@ -33,7 +34,7 @@ class AddWalletActivity : BaseActivity() {
 
 
     //地址类型
-    private var mAddressType = -1
+    private var mAddressType = Constants.CHILD_ADDRESS_NATIVE
 
     override fun onInit() {
         super.onInit()
@@ -41,6 +42,15 @@ class AddWalletActivity : BaseActivity() {
         binding?.apply {
             //生成随机钱包名称
             tvWalletName.text = "BTC-${getRandomName()}"
+
+            tvWalletName.onClick(Constants.CLICK_INTERVAL) {
+                val setWalletNameDialog = SetWalletNameDialog(tvWalletName.text.toString())
+                setWalletNameDialog.confirmEvent = {
+                    if (!TextUtils.isEmpty(it))
+                        tvWalletName.text = it
+                }
+                setWalletNameDialog.showNow(supportFragmentManager, "")
+            }
 
             tvImport.onClick(Constants.CLICK_INTERVAL) {
                 ARouter.getInstance().build(ARouterUrl.WAL_WALLET_IMPORT_ACTIVITY_PATH)
@@ -118,9 +128,8 @@ class AddWalletActivity : BaseActivity() {
     private fun checkButtonState() {
         binding?.apply {
             btnCreate.isEnabled =
-                mAddressType != -1 && !TextUtils.isEmpty(etWalletPassword.getText()) && !TextUtils.isEmpty(
-                    etWalletPasswordRepeat.getText()
-                ) && cbAgreement.isChecked
+                    /* mAddressType != -1 &&*/ !TextUtils.isEmpty(etWalletPassword.getText())
+                    && !TextUtils.isEmpty(etWalletPasswordRepeat.getText()) /*&& cbAgreement.isChecked*/
         }
     }
 

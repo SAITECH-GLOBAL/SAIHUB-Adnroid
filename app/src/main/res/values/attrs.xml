@@ -71,6 +71,11 @@
             <enum name="invisible" value="4" />
             <enum name="gone" value="8" />
         </attr>
+        <attr name="right_visiblity">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="4" />
+            <enum name="gone" value="8" />
+        </attr>
         <attr name="divider_visiblity">
             <enum name="visible" value="0" />
             <enum name="invisible" value="4" />

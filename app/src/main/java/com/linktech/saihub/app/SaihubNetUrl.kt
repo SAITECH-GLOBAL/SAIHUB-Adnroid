@@ -11,5 +11,6 @@ object SaihubNetUrl {
 
     const val BLOCK_CHAIN_URL = "https://blockchain.info/"
 
+    const val DEFAULT_LIGHTNING_URL = "https://lndhub.io/"
 
 }

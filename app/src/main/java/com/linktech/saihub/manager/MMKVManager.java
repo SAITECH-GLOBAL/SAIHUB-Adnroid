@@ -66,4 +66,21 @@ public class MMKVManager {
     public String getExchangeRate() {
         return mmkvCacheData.decodeString("exchange_rate");
     }
+
+    /**
+     * 闪电账单列表缓存
+     * @param list
+     */
+    public void saveLnCacheList(String list) {
+        mmkvCacheData.encode("lightning_list_cache", list);
+    }
+
+    /**
+     * 获取闪电账单列表缓存
+     *
+     * @return
+     */
+    public String getLnCacheList() {
+        return mmkvCacheData.decodeString("lightning_list_cache");
+    }
 }

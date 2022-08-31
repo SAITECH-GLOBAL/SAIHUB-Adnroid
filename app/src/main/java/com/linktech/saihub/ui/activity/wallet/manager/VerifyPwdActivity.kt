@@ -18,8 +18,6 @@ import com.linktech.saihub.db.utils.TokenDaoUtil
 import com.linktech.saihub.db.utils.WalletDaoUtils
 import com.linktech.saihub.entity.event.MessageEvent
 import com.linktech.saihub.manager.AES
-import com.linktech.saihub.manager.ActivityManager
-import com.linktech.saihub.ui.activity.login.GuideActivity
 import com.linktech.saihub.ui.dialog.NomalSuccessFailDialog
 import com.qmuiteam.qmui.kotlin.onClick
 import kotlinx.coroutines.Dispatchers
@@ -41,6 +39,7 @@ class VerifyPwdActivity : BaseActivity() {
         const val VERIFY_TOUCHID = 2 //touchid开启
         const val VERIFY_PASSPHRASE = 3 //更改助记词密码
         const val VERIFY_DELETE_WALLET = 4  //删除钱包
+        const val VERIFY_LN_CLOSE_PWD = 5  //闪电钱包关闭密码
     }
 
     var walletBean: WalletBean? = null
@@ -110,6 +109,11 @@ class VerifyPwdActivity : BaseActivity() {
                 VERIFY_DELETE_WALLET -> {
                     deleteWallet()
                 }
+                //闪电钱包关闭支付密码
+                VERIFY_LN_CLOSE_PWD -> {
+                    closePwdAndTouchId()
+                    finish()
+                }
             }
 
         }
@@ -135,6 +139,23 @@ class VerifyPwdActivity : BaseActivity() {
                             walletBean!!
                         )
                     )
+            }
+        }
+    }
+
+    //闪电钱包关闭密码同时关闭指纹支付
+    private fun closePwdAndTouchId() {
+        lifecycleScope.launch {
+            runCatching {
+                walletBean ?: return@launch
+                walletBean?.isOpenTouchIdPay = false
+                walletBean?.isLNOpenPwdPay = false
+                walletBean?.password = ""
+                withContext(Dispatchers.IO) {
+                    WalletDaoUtils.updateWallet(walletBean)
+                }
+                EventBus.getDefault()
+                    .post(MessageEvent.getInstance(MessageEvent.MESSAGE_ID_CHANGE_PAY_PWD_LN_WALLET))
             }
         }
     }

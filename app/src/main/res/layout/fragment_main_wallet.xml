@@ -71,7 +71,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:paddingTop="@dimen/dp_23"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_drawer">
@@ -80,84 +79,238 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cl_wallet_card"
+                    android:id="@+id/cl_wallet"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:background="@mipmap/icon_wallet_card"
-                    android:paddingStart="@dimen/dp_20"
-                    android:paddingTop="@dimen/dp_24"
-                    android:paddingEnd="@dimen/dp_16"
-                    app:layout_constraintDimensionRatio="w,1:2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_wallet_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@mipmap/icon_wallet_card"
+                        android:paddingStart="@dimen/dp_20"
+                        android:paddingTop="@dimen/dp_24"
+                        android:paddingEnd="@dimen/dp_16"
+                        app:layout_constraintDimensionRatio="w,1:2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_wallet_name"
+                            style="@style/text_black_normal_bold"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="BTC-sdsd" />
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            style="@style/text_black_num_normal_bold"
+                            android:layout_marginTop="@dimen/dp_8"
+                            android:drawablePadding="@dimen/dp_4"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/color_BFFFFFFF"
+                            android:textSize="@dimen/text_12_sp"
+                            app:drawableEndCompat="@mipmap/icon_wallet_qrcode"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_wallet_name"
+                            tools:text="bc1a9e91e9..25cbC26D66" />
+
+                        <TextView
+                            android:id="@+id/tv_balance"
+                            style="@style/text_black_num_normal_bold"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:textSize="48sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_address"
+                            tools:text="$235.00" />
+
+                        <ImageButton
+                            android:id="@+id/btn_more"
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/dp_20"
+                            android:background="@mipmap/icon_more"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
-                        android:id="@+id/tv_wallet_name"
+                        android:id="@+id/tv_assets_title"
                         style="@style/text_black_normal_bold"
-                        android:textColor="@color/white"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:text="@string/assets"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="BTC-sdsd" />
+                        app:layout_constraintTop_toBottomOf="@+id/cl_wallet_card" />
 
-                    <TextView
-                        android:id="@+id/tv_address"
-                        style="@style/text_black_num_normal_bold"
-                        android:layout_marginTop="@dimen/dp_8"
-                        android:drawablePadding="@dimen/dp_4"
-                        android:gravity="center_vertical"
-                        android:textColor="@color/color_BFFFFFFF"
-                        android:textSize="@dimen/text_12_sp"
-                        app:drawableEndCompat="@mipmap/icon_wallet_qrcode"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_token"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_16"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_wallet_name"
-                        tools:text="bc1a9e91e9..25cbC26D66" />
-
-                    <TextView
-                        android:id="@+id/tv_balance"
-                        style="@style/text_black_num_normal_bold"
-                        android:layout_marginBottom="@dimen/dp_5"
-                        android:singleLine="true"
-                        android:textColor="@color/white"
-                        android:textSize="48sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_address"
-                        tools:text="$235.00" />
-
-                    <ImageButton
-                        android:id="@+id/btn_more"
-                        android:layout_width="@dimen/dp_20"
-                        android:layout_height="@dimen/dp_20"
-                        android:background="@mipmap/icon_more"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
+                        app:layout_constraintTop_toBottomOf="@+id/tv_assets_title"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_token" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/tv_assets_title"
-                    style="@style/text_black_normal_bold"
-                    android:layout_marginTop="@dimen/dp_24"
-                    android:text="@string/assets"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cl_wallet_card" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_token"
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/cl_ln_wallet"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_16"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_assets_title"
-                    tools:itemCount="2"
-                    tools:listitem="@layout/item_token" />
+                    android:layout_height="@dimen/dp_0"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_ln_wallet_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@mipmap/icon_ln_wallet_card"
+                            android:paddingStart="@dimen/dp_20"
+                            android:paddingTop="@dimen/dp_24"
+                            app:layout_constraintDimensionRatio="w,1:2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/tv_ln_wallet_name"
+                                style="@style/text_black_normal_bold"
+                                android:textColor="@color/white"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="BTC-sdsd" />
+
+                            <TextView
+                                android:id="@+id/tv_ln_balance"
+                                style="@style/text_black_num_normal_bold"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:singleLine="true"
+                                android:textColor="@color/white"
+                                android:textSize="48sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_ln_wallet_name"
+                                tools:text="0" />
+
+                            <TextView
+                                android:id="@+id/tv_unit"
+                                style="@style/text_black_num_normal_bold"
+                                android:layout_marginStart="@dimen/dp_5"
+                                android:layout_marginTop="@dimen/dp_22"
+                                android:layout_marginBottom="@dimen/dp_4"
+                                android:singleLine="true"
+                                android:text="@string/btc"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_23_sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/tv_ln_balance"
+                                app:layout_constraintStart_toEndOf="@+id/tv_ln_balance" />
+
+                            <TextView
+                                android:id="@+id/tv_ln_convert"
+                                style="@style/text_black_num_normal_bold"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:singleLine="true"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_22_sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_ln_balance"
+                                tools:text="$235.00" />
+
+                            <ImageButton
+                                android:id="@+id/btn_ln_manage"
+                                android:layout_width="@dimen/dp_20"
+                                android:layout_height="@dimen/dp_20"
+                                android:layout_marginEnd="@dimen/dp_16"
+                                android:background="@mipmap/icon_more"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Button
+                                android:id="@+id/btn_chain_recharge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_marginTop="@dimen/dp_2"
+                                android:layout_marginEnd="@dimen/dp_16"
+                                android:background="@drawable/shape_white_stroke_radius_16"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:paddingStart="@dimen/dp_12"
+                                android:paddingEnd="@dimen/dp_12"
+                                android:text="@string/recharge_chain"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_12_sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_ln_balance" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <Button
+                            android:id="@+id/btn_receive"
+                            style="@style/btn_normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_52"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:layout_marginBottom="@dimen/dp_28"
+                            android:background="@drawable/shape_fff0d6_radius_32"
+                            android:drawableStart="@mipmap/icon_ln_receive"
+                            android:gravity="center"
+                            android:minWidth="@dimen/dp_136"
+                            android:paddingStart="@dimen/dp_30"
+                            android:paddingEnd="@dimen/dp_30"
+                            android:text="@string/receive"
+                            android:textColor="@color/color_414141"
+                            app:layout_constraintEnd_toStartOf="@+id/btn_send"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/cl_ln_wallet_card" />
+
+                        <Button
+                            android:id="@+id/btn_send"
+                            style="@style/btn_normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_52"
+                            android:layout_marginStart="@dimen/dp_20"
+                            android:layout_marginBottom="@dimen/dp_28"
+                            android:background="@drawable/shape_fff0d6_radius_32"
+                            android:drawableStart="@mipmap/icon_ln_send"
+                            android:gravity="center"
+                            android:minWidth="@dimen/dp_136"
+                            android:paddingStart="@dimen/dp_30"
+                            android:paddingEnd="@dimen/dp_30"
+                            android:text="@string/send"
+                            android:textColor="@color/color_414141"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toEndOf="@+id/btn_receive"
+                            app:layout_constraintTop_toTopOf="@id/btn_receive" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_ln_record"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_16"
+                            android:nestedScrollingEnabled="false"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/btn_send"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/item_ln_record" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.core.widget.NestedScrollView>
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
 

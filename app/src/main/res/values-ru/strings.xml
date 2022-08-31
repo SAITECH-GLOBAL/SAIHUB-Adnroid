@@ -186,7 +186,7 @@
     <string name="wallet_settings">Настройка кошелька</string>
     <string name="backup_private_key">Запасной секретный ключ</string>
     <string name="modify_password">Изменить пароль</string>
-    <string name="touch_id">Face ID/Touch ID</string>
+    <string name="touch_id">Touch ID</string>
     <string name="passphrase">Кодовая фраза</string>
     <string name="address_manager">Управление адресом</string>
     <string name="delete_wallet">Удалить кошелек</string>
@@ -199,7 +199,6 @@
     <string name="enter_password">Введите пароль</string>
     <string name="enter_new_password">Введите новый пароль</string>
     <string name="forget_password">Забыли пароль?</string>
-    <!--    <string name="error_pwd_style">Введите пароль из 8-20 символов</string>-->
     <string name="original_password_wrong">Ошибка исходного пароля</string>
     <string name="the_two_passwords_do_not_match">Пароль не совпадает</string>
     <string name="complete">Выполнено</string>
@@ -272,7 +271,6 @@
     <string name="device_already_exists">Устройство привязывалось ранее</string>
     <string name="import_loading">Ввод кошелька…</string>
     <string name="wallet_num_tip">Максимум 10 кошельков</string>
-
     <string name="btc_min_number">Сумма перевода слишком мала</string>
     <string name="total_power">Общая мощность</string>
     <string name="power_consumption">Потребляемая мощность</string>
@@ -304,4 +302,45 @@
     <string name="repeat_password">Повторите пароль</string>
     <string name="not_same_tip">Это не та же сделка</string>
     <string name="insufficient_btc_balance">недостаточный баланс BTC</string>
+
+    <string name="lightning_desc">Lightning-кошелек</string>
+    <string name="add_lightning_desc">Добавить кошелек Lightning</string>
+    <string name="host">Узлы</string>
+    <string name="wallet_name_hint">Пожалуйста, введите имя</string>
+    <string name="host_hint">Пожалуйста, введите узел</string>
+    <string name="import_lightning_desc">Импорт Lightning</string>
+    <string name="lndhub">LNDHub</string>
+    <string name="select_type">Тип кошелька</string>
+    <string name="recharge_chain">Пополнить</string>
+    <string name="out_of_date">Просроченный</string>
+    <string name="ln_invoice">Lightning invoice</string>
+    <string name="on_chain">On-chain</string>
+    <string name="satoshis">sats</string>
+    <string name="memo">Памятка</string>
+    <string name="memo_hint">Введите примечание</string>
+    <string name="lndhub_hint">Войти в LNDhub</string>
+    <string name="create_invoice">Создать invoice</string>
+    <string name="expire_time">Действителен до</string>
+    <string name="lightning_settings">Настройки молнии</string>
+    <string name="save_desc">Сохранить</string>
+    <string name="export_desc">Экспорт</string>
+    <string name="delete_ln_content">Сначала резервное копирование, пожалуйста.</string>
+    <string name="wallet_local">Пополнение местного кошелька</string>
+    <string name="wallet_other">Пополнение с внешним кошельком</string>
+    <string name="transaction_ln_input">Invoice/Lightning Address</string>
+    <string name="pay_desc">Платежи</string>
+    <string name="ln_input_desc">Введите или вставьте адрес</string>
+    <string name="expire_time_symbol">Действителен до：</string>
+    <string name="fee_symbol">Потенциальная плата：</string>
+    <string name="pay_interval_desc">Пожалуйста, заплатите：</string>
+    <string name="parse_domian_desc">sats for：</string>
+    <string name="import_error">Сбой импорта</string>
+    <string name="import_success">Успешно импортируется</string>
+    <string name="no_local_wallet">Нет местного кошелька</string>
+    <string name="create_host_error">Ошибка хоста</string>
+    <string name="pay_success">Успешная оплата</string>
+    <string name="save_success">Сохранено</string>
+    <string name="ln_payment">Платежи в сети Lightning Network</string>
+    <string name="wallet_on_chain">BTC-кошелек</string>
+    <string name="wallet_type_ln">Lightning Network</string>
 </resources>

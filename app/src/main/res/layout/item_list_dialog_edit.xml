@@ -7,18 +7,24 @@
 
     </data>
 
-
-    <TextView
-        android:id="@+id/tv_content"
+    <LinearLayout
+        android:id="@+id/ll_content"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_52"
         android:layout_marginStart="@dimen/dp_20"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/montserrat_regular"
-        android:gravity="center"
-        android:textColor="@color/black"
+        android:layout_marginEnd="@dimen/dp_20"
         android:background="@drawable/shape_bg_dialog_poll_item_list"
-        android:textSize="@dimen/text_14_sp"
-        tools:text="Copy URL" />
+        android:gravity="center">
 
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp_6"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14_sp"
+            tools:text="Copy URL" />
+    </LinearLayout>
 </layout>

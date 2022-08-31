@@ -18,6 +18,7 @@ import com.linktech.saihub.entity.event.MessageEvent
 import com.linktech.saihub.mvvm.base.vmObserver
 import com.linktech.saihub.mvvm.model.WalletViewModel
 import com.linktech.saihub.ui.adapter.wallet.WalletAdapter
+import com.linktech.saihub.ui.dialog.SelectWalletTypeDialog
 import com.linktech.saihub.util.ToastUtils
 import com.linktech.saihub.view.empty.WalletAddEmptyView
 import com.qmuiteam.qmui.kotlin.onClick
@@ -44,20 +45,20 @@ class WalletDrawerDialog : BaseDrawerDialogFragment(), WalletAddEmptyView.AddLis
         WalletAdapter(R.layout.item_wallet_drawer)
     }
 
+    private val walletLnAdapter by lazy {
+        WalletAdapter(R.layout.item_wallet_drawer)
+    }
+
     var emptyView: WalletAddEmptyView? = null
     var emptyView1: WalletAddEmptyView? = null
+    var emptyView2: WalletAddEmptyView? = null
 
     var walletList: List<WalletBean>? = null
     var walletObList: List<WalletBean>? = null
+    var walletLnList: List<WalletBean>? = null
 
     private val walletViewModel by lazy {
         ViewModelProvider(this)[WalletViewModel::class.java]
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setStyle(STYLE_NORMAL, R.style.custom_full_screen_dialog_wallet)
-        dialog?.window?.requestFeature(Window.FEATURE_NO_TITLE)
     }
 
     override fun onCreateView(
@@ -69,8 +70,8 @@ class WalletDrawerDialog : BaseDrawerDialogFragment(), WalletAddEmptyView.AddLis
         return binding?.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onStart() {
+        super.onStart()
         init()
         setData()
     }
@@ -94,6 +95,14 @@ class WalletDrawerDialog : BaseDrawerDialogFragment(), WalletAddEmptyView.AddLis
                 walletObAdapter.setNewInstance(it.toMutableList())
             }
         }
+
+        walletViewModel.mWalletListLnData.vmObserver(this) {
+            onAppSuccess = {
+                walletLnList = it
+                walletLnAdapter.isUseEmpty = true
+                walletLnAdapter.setNewInstance(it.toMutableList())
+            }
+        }
         //TODO 滑动
 //        binding?.cslAsset?.smoothScrollToChild()
 
@@ -107,27 +116,43 @@ class WalletDrawerDialog : BaseDrawerDialogFragment(), WalletAddEmptyView.AddLis
 
     }
 
-
     private fun init() {
         binding?.apply {
             btnAddWallet.onClick(Constants.CLICK_INTERVAL) {
-                addWallet()
+                val sizeList =
+                    arrayListOf(
+                        (walletObList?.size?.let { walletList?.size?.plus(it) }) ?: 0,
+                        walletLnList?.size!!
+                    )
+                val selectWalletTypeDialog = SelectWalletTypeDialog.newInstance(sizeList)
+                selectWalletTypeDialog.showNow(parentFragmentManager, "")
+                dismiss()
             }
             rvWalletList.layoutManager = LinearLayoutManager(context)
             rvWalletObList.layoutManager = LinearLayoutManager(context)
+            rvWalletLnList.layoutManager = LinearLayoutManager(context)
             rvWalletList.adapter = walletAdapter
             rvWalletObList.adapter = walletObAdapter
+            rvWalletLnList.adapter = walletLnAdapter
 
 
             emptyView = context?.let { WalletAddEmptyView(it) }
             emptyView1 = context?.let { WalletAddEmptyView(it) }
+            emptyView2 = context?.let { WalletAddEmptyView(it) }
             walletAdapter.setEmptyView(emptyView!!)
             walletObAdapter.setEmptyView(emptyView1!!)
+            walletLnAdapter.setEmptyView(emptyView2!!)
             walletAdapter.isUseEmpty = false
             walletObAdapter.isUseEmpty = false
+            walletLnAdapter.isUseEmpty = false
 
             emptyView?.setAddListener(this@WalletDrawerDialog)
             emptyView1?.setAddListener(this@WalletDrawerDialog)
+            emptyView2?.setAddListener {
+                ARouter.getInstance().build(ARouterUrl.WAL_LN_WALLET_ADD_ACTIVITY_PATH)
+                    .navigation()
+                dismiss()
+            }
 
             walletAdapter.setOnItemClickListener { adapter, _, position ->
                 (adapter.data[position] as? WalletBean)?.let { walletViewModel.updateSelectWallet(it) }
@@ -135,11 +160,14 @@ class WalletDrawerDialog : BaseDrawerDialogFragment(), WalletAddEmptyView.AddLis
             walletObAdapter.setOnItemClickListener { adapter, _, position ->
                 (adapter.data[position] as? WalletBean)?.let { walletViewModel.updateSelectWallet(it) }
             }
+            walletLnAdapter.setOnItemClickListener { adapter, _, position ->
+                (adapter.data[position] as? WalletBean)?.let { walletViewModel.updateSelectWallet(it) }
+            }
         }
     }
 
     override fun addWallet() {
-        if ((walletObList?.size?.let { walletList?.size?.plus(it) })!! >= 10) {
+        if ((walletObList?.size?.let { walletList?.size?.plus(it) }) ?: 0 >= 10) {
             ToastUtils.shortImageToast(getString(R.string.wallet_num_tip))
         } else {
             ARouter.getInstance().build(ARouterUrl.WAL_WALLET_ADD_ACTIVITY_PATH)
@@ -149,9 +177,11 @@ class WalletDrawerDialog : BaseDrawerDialogFragment(), WalletAddEmptyView.AddLis
 
     }
 
+
     private fun loadWalletData() {
         walletViewModel.getWalletList()
         walletViewModel.getObserverWalletList()
+        walletViewModel.getLnWalletList()
     }
 
 
@@ -170,7 +200,6 @@ class WalletDrawerDialog : BaseDrawerDialogFragment(), WalletAddEmptyView.AddLis
     fun setOnClickListener(onClickListener: OnClickListener) {
         this.onClickListener = onClickListener
     }
-
 
 
     override fun onDestroy() {

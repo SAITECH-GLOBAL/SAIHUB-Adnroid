@@ -5,8 +5,13 @@ import android.widget.ImageView
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.google.gson.JsonArray
+import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
+import java.lang.reflect.Type
+
 
 /**
  * Created by tromo on 2021/9/22.
@@ -124,4 +129,40 @@ fun <T> averageAssign(source: List<T>, size: Int): List<List<T>> {
         result.add(value)
     }
     return result
+}
+
+fun appendAuth(accessToken: String): String {
+    return "Bearer $accessToken"
+}
+
+fun getKeySend(content: String): List<String> {
+    val list = mutableListOf<String>()
+    runCatching {
+        val split = content.split("@")
+        list.add(split[0])
+        list.add(split[1])
+    }.onSuccess {
+        return list
+    }.onFailure {
+        return list
+    }
+    return list
+}
+
+fun keySendToDomain(content: String): String {
+    return "https://$content/"
+}
+
+fun formatDomain(content: String): String {
+    return if (content.endsWith("/"))
+        content
+    else
+        "${content}/"
+}
+
+fun <T> jsonArrayToList(array: JsonArray?, clazz: Class<T>?): List<T>? {
+    val gson = Gson()
+    val listType: Type =
+        TypeToken.getParameterized(List::class.java, clazz).type
+    return gson.fromJson(array, listType)
 }

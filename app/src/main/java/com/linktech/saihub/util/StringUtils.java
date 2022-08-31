@@ -128,6 +128,28 @@ public class StringUtils {
 
     }
 
+    /**
+     * invoice截取显示
+     *
+     * @param invoice
+     * @return
+     */
+    public static String formatInvoice(String invoice) {
+        if (invoice == null) {
+            return "";
+        }
+        if (invoice.length() >= 40) {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append(invoice.substring(0,20));
+            stringBuilder.append("...");
+            stringBuilder.append(invoice.substring(invoice.length() - 20));
+            return stringBuilder.toString();
+        } else {
+            return invoice;
+        }
+
+    }
+
     public static String imageTranslateUri(int resId, Context context) {
         Resources r = context.getResources();
         Uri uri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://"

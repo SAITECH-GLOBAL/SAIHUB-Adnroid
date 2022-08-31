@@ -186,7 +186,7 @@
     <string name="wallet_settings">錢包設置</string>
     <string name="backup_private_key">備份私鑰</string>
     <string name="modify_password">修改密碼</string>
-    <string name="touch_id">Face ID/Touch ID</string>
+    <string name="touch_id">Touch ID</string>
     <string name="passphrase">Passphrase</string>
     <string name="address_manager">地址管理</string>
     <string name="delete_wallet">刪除錢包</string>
@@ -276,7 +276,6 @@
     <string name="omni_transfer_tip">Omni不支持原生隔離見證地址轉賬</string>
     <string name="send_success_tip">交易已提交，等待區塊確認</string>
 
-
     <string name="btc_min_number">轉賬金額過低</string>
     <string name="total_power">總用電量</string>
     <string name="power_consumption">累計熱量</string>
@@ -303,4 +302,45 @@
     <string name="repeat_password">重複密碼</string>
     <string name="not_same_tip">這不是同一個交易</string>
     <string name="insufficient_btc_balance">BTC餘額不足</string>
+
+    <string name="lightning_desc">閃電錢包</string>
+    <string name="add_lightning_desc">添加閃電錢包</string>
+    <string name="host">節點</string>
+    <string name="wallet_name_hint">請輸入名稱</string>
+    <string name="host_hint">請輸入Host</string>
+    <string name="import_lightning_desc">導入閃電錢包</string>
+    <string name="lndhub">LNDHub</string>
+    <string name="select_type">選擇類型</string>
+    <string name="recharge_chain">錢包充值</string>
+    <string name="out_of_date">已過期</string>
+    <string name="ln_invoice">閃電支票</string>
+    <string name="on_chain">鏈上充值</string>
+    <string name="satoshis">聰</string>
+    <string name="memo">備注</string>
+    <string name="memo_hint">請輸入備注</string>
+    <string name="lndhub_hint">請輸入LNDHub</string>
+    <string name="create_invoice">創建支票</string>
+    <string name="expire_time">有效期</string>
+    <string name="lightning_settings">閃電錢包設置</string>
+    <string name="save_desc">保存</string>
+    <string name="export_desc">導出</string>
+    <string name="delete_ln_content">請先備份.</string>
+    <string name="wallet_local">本地錢包</string>
+    <string name="wallet_other">外部錢包</string>
+    <string name="transaction_ln_input">Invocie/閃電地址</string>
+    <string name="pay_desc">支付</string>
+    <string name="ln_input_desc">輸入或粘貼地址</string>
+    <string name="expire_time_symbol">有效期：</string>
+    <string name="fee_symbol">潛在費用：</string>
+    <string name="pay_interval_desc">請支付：</string>
+    <string name="parse_domian_desc">支付給：</string>
+    <string name="import_error">導入失敗</string>
+    <string name="import_success">導入成功</string>
+    <string name="no_local_wallet">無本地錢包</string>
+    <string name="create_host_error">host節點錯誤</string>
+    <string name="pay_success">支付成功</string>
+    <string name="save_success">保存成功</string>
+    <string name="ln_payment">闪电网络付款</string>
+    <string name="wallet_on_chain">鏈上錢包</string>
+    <string name="wallet_type_ln">閃電網絡</string>
 </resources>

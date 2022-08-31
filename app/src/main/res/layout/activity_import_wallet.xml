@@ -49,8 +49,8 @@
                 <TextView
                     android:id="@+id/tv_cold_wallet"
                     style="@style/text_black_normal"
-                    android:textColor="@color/color_FF005F6F"
-                    android:text="@string/cold_wallet" />
+                    android:text="@string/cold_wallet"
+                    android:textColor="@color/color_FF005F6F" />
 
                 <TextView
                     style="@style/text_black_normal"
@@ -62,8 +62,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_156"
                 android:layout_marginTop="@dimen/dp_16"
-                android:fontFamily="@font/montserrat_regular"
                 android:background="@drawable/shape_et_scan"
+                android:fontFamily="@font/montserrat_regular"
                 android:gravity="start"
                 android:hint="@string/import_wallet_hint"
                 android:padding="@dimen/dp_12"
@@ -86,8 +86,10 @@
                     android:id="@+id/tv_wallet_name"
                     style="@style/text_gray_normal_bold"
                     android:layout_marginStart="@dimen/dp_20"
+                    android:drawablePadding="@dimen/dp_4"
                     android:textColor="@color/color_FF6D778B"
                     android:textSize="@dimen/text_20_sp"
+                    app:drawableEndCompat="@mipmap/icon_arrows_gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="BTC-sdsd" />

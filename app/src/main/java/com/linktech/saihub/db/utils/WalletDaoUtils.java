@@ -2,6 +2,7 @@ package com.linktech.saihub.db.utils;
 
 import android.text.TextUtils;
 
+import com.linktech.saihub.app.Constants;
 import com.linktech.saihub.db.bean.ChildAddressBean;
 import com.linktech.saihub.db.bean.WalletBean;
 import com.linktech.saihub.entity.wallet.bean.AddressBean;
@@ -306,10 +307,18 @@ public class WalletDaoUtils {
     }
 
     /**
-     * 查询所有钱包(非观察者) 按照时间倒序排序
+     * 查询所有钱包(除闪电网络钱包以外的非观察者) 按照时间倒序排序
      */
     public static List<WalletBean> loadAllOperate() {
-        return walletDao.queryBuilder().where(WalletBeanDao.Properties.IsObserver.eq(false))
+        return walletDao.queryBuilder().where(WalletBeanDao.Properties.ExistType.notEq(Constants.EXIST_LIGHTNING), WalletBeanDao.Properties.IsObserver.eq(false))
+                .orderDesc(WalletBeanDao.Properties.CreateTime).list();
+    }
+
+    /**
+     * 查询所有钱包(闪电网络钱包) 按照时间倒序排序
+     */
+    public static List<WalletBean> loadAllLightning() {
+        return walletDao.queryBuilder().where(WalletBeanDao.Properties.ExistType.eq(Constants.EXIST_LIGHTNING))
                 .orderDesc(WalletBeanDao.Properties.CreateTime).list();
     }
 
@@ -391,10 +400,11 @@ public class WalletDaoUtils {
      * @param walletId
      * @param name
      */
-    public static void updateWalletName(long walletId, String name) {
+    public static WalletBean updateWalletName(long walletId, String name) {
         WalletBean wallet = walletDao.load(walletId);
         wallet.setName(name);
         walletDao.update(wallet);
+        return wallet;
     }
 
     /**

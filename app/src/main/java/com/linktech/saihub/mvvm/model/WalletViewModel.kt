@@ -48,6 +48,7 @@ class WalletViewModel() : BaseViewModel() {
 
     val mWalletListData by lazy { VmLiveData<List<WalletBean>>() }
     val mWalletListObserverData by lazy { VmLiveData<List<WalletBean>>() }
+    val mWalletListLnData by lazy { VmLiveData<List<WalletBean>>() }
 
     val mCurrentWalletData by lazy { VmLiveData<WalletBean>() }
 
@@ -60,6 +61,8 @@ class WalletViewModel() : BaseViewModel() {
     val mPushIntentData by lazy { VmLiveData<Pair<WalletBean, TokenInfoBean>>() }
 
     val mChangeAddressData by lazy { VmLiveData<Boolean>() }
+
+    val mChangeNameData by lazy { VmLiveData<WalletBean>() }
 
     //创建助记词
     fun createPhrase(type: Int) {
@@ -300,13 +303,16 @@ class WalletViewModel() : BaseViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             runCatching {
                 val jsMultiSigAddressEntity =
-                    Gson().fromJson(list.substring(1, list.length - 1).replace("\\", ""),
-                        JsMultiSigAddressEntity::class.java)
+                    Gson().fromJson(
+                        list.substring(1, list.length - 1).replace("\\", ""),
+                        JsMultiSigAddressEntity::class.java
+                    )
                 val walletBean = ManagerBTCWallet.getInstance().importMultiSig(
                     walletIntentBean,
                     content,
                     jsMultiSigAddressEntity.externalAddresses,
-                    output)
+                    output
+                )
                 //存储默认代币
                 val aLong: Long = WalletDaoUtils.insertNewWallet(walletBean)
                 walletBean.id = aLong
@@ -315,8 +321,10 @@ class WalletViewModel() : BaseViewModel() {
                 //BTC存储默认的子地址
                 val childAddressNormalBeans: List<ChildAddressBean> =
                     ManagerBTCWallet.getInstance()
-                        .getChildAddressNormalBeans(jsMultiSigAddressEntity.externalAddresses,
-                            jsMultiSigAddressEntity.internalAddress, walletBean)
+                        .getChildAddressNormalBeans(
+                            jsMultiSigAddressEntity.externalAddresses,
+                            jsMultiSigAddressEntity.internalAddress, walletBean
+                        )
                 ChildAddressDaoUtil.insertChildAddress(childAddressNormalBeans, walletBean)
                 //上报地址
 //                sendAddressToServer(childAddressNormalBeans.map {
@@ -343,6 +351,19 @@ class WalletViewModel() : BaseViewModel() {
                 mWalletListData.postValue(VmState.Success(it))
             }.onFailure {
                 mWalletListData.postValue(VmState.Error(ApiException(it)))
+            }
+        }
+    }
+
+    //获取闪电钱包列表
+    fun getLnWalletList() {
+        viewModelScope.launch(Dispatchers.IO) {
+            runCatching {
+                WalletDaoUtils.loadAllLightning()
+            }.onSuccess {
+                mWalletListLnData.postValue(VmState.Success(it))
+            }.onFailure {
+                mWalletListLnData.postValue(VmState.Error(ApiException(it)))
             }
         }
     }
@@ -410,9 +431,24 @@ class WalletViewModel() : BaseViewModel() {
         }
     }
 
+    //更新钱包的主地址
+    fun updateWalletName(name: String, walletBean: WalletBean) {
+        viewModelScope.launch(Dispatchers.IO) {
+            runCatching {
+                WalletDaoUtils.updateWalletName(walletBean.id, name)
+            }.onSuccess {
+                mChangeNameData.postValue(VmState.Success(it))
+            }.onFailure {
+                mChangeNameData.postValue(VmState.Error(ApiException(it)))
+            }
+        }
+    }
+
     //上报地址
     private fun sendAddressToServer(addressList: List<String>, type: Int) {
-        launchVmRequest({ walletRepository.sendAddressToServer(addressList, type) },
-            mSendServerData)
+        launchVmRequest(
+            { walletRepository.sendAddressToServer(addressList, type) },
+            mSendServerData
+        )
     }
 }

@@ -296,8 +296,12 @@ class WalletTransactionViewModel : BaseViewModel() {
                     calculateFee(transferVerifyBean.getTransferSendBean(feePair))
                     return
                 } else {
-                    val bigDecimal = BigDecimal(Pub.sub(transferVerifyBean.balanceDouble,
-                        Pub.GetDouble(transferVerifyBean.moneyNumberStr)))
+                    val bigDecimal = BigDecimal(
+                        Pub.sub(
+                            transferVerifyBean.balanceDouble,
+                            Pub.GetDouble(transferVerifyBean.moneyNumberStr)
+                        )
+                    )
                     val bigDecimal1 = BigDecimal(feeNumber)
 
                     if (bigDecimal < bigDecimal1) {
@@ -314,9 +318,13 @@ class WalletTransactionViewModel : BaseViewModel() {
                 }
                 var balanceAddress = BigDecimal.ZERO
                 for (item in addressUtxo) {
-                    balanceAddress += BigDecimal(NumberCountUtils.getNumberScaleByPow(item.value.toString(),
-                        8,
-                        8))
+                    balanceAddress += BigDecimal(
+                        NumberCountUtils.getNumberScaleByPow(
+                            item.value.toString(),
+                            8,
+                            8
+                        )
+                    )
                 }
                 if (addressUtxo.isEmpty() || balanceAddress < BigDecimal(feeNumber)) {
                     getString(R.string.insufficient_btc_balance)?.let {
@@ -401,7 +409,7 @@ class WalletTransactionViewModel : BaseViewModel() {
                 val mnemonic =
                     if (walletBean.existType == Constants.EXIST_MNEMONIC) AES.decrypt(walletBean.mnemonic)
                     else AES.decrypt(walletBean.privateKey)
-
+                val passPhrase = AES.decrypt(walletBean.passphrase)
                 val utxoHexList = transferBean.utxoHexList
                 val address = transferBean.toAddress
                 val value = NumberCountUtils.getCong(transferBean.moneyNumber, 8)
@@ -410,7 +418,18 @@ class WalletTransactionViewModel : BaseViewModel() {
                 val isBech32 = true
                 val jsData =
                     if (walletBean.existType == Constants.EXIST_MNEMONIC)
-                        "javascript:createHDTransaction('${mnemonic}',${Gson().toJson(utxoHexList)},'${address}',${value},'${changeAddress}',${feeRate},${isBech32})"
+                        if (TextUtils.isEmpty(passPhrase))
+                            "javascript:createHDTransaction('${mnemonic}',${
+                                Gson().toJson(
+                                    utxoHexList
+                                )
+                            },'${address}',${value},'${changeAddress}',${feeRate},${isBech32})"
+                        else
+                            "javascript:createHDTransaction('${mnemonic}',${
+                                Gson().toJson(
+                                    utxoHexList
+                                )
+                            },'${address}',${value},'${changeAddress}',${feeRate},${isBech32},'${passPhrase}')"
                     else
                         "javascript:createSingleTransaction('${mnemonic}',${
                             Gson().toJson(utxoHexList)

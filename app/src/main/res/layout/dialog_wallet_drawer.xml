@@ -85,6 +85,31 @@
                 android:background="@color/white"
                 android:paddingTop="@dimen/dp_8"
                 android:paddingBottom="@dimen/dp_12"
+                android:text="@string/lightning_desc"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_isSticky="true" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_wallet_ln_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_wallet_drawer" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_12" />
+
+            <TextView
+                style="@style/text_black_normal_bold"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_12"
                 android:text="@string/wallet_ob"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

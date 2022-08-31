@@ -21,11 +21,29 @@
             android:layout_marginTop="@dimen/dp_8"
             android:src="@mipmap/icon_bottom_dialog_top_logo" />
 
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_marginTop="@dimen/dp_8"
+            android:visibility="gone"
+            style="@style/text_black_normal_bold"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:text="@string/select_type" />
+
+        <TextView
+            android:id="@+id/tv_center_title"
+            android:layout_marginTop="@dimen/dp_8"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            style="@style/text_black_normal_bold"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:text="@string/recharge_chain" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recy_edit_list"
-            android:layout_marginTop="@dimen/dp_8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
             tools:itemCount="3"
             tools:listitem="@layout/item_list_dialog_edit" />
 

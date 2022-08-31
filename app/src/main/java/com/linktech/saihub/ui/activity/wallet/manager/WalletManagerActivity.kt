@@ -1,6 +1,8 @@
 package com.linktech.saihub.ui.activity.wallet.manager
 
+import android.text.TextUtils
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
@@ -19,9 +21,13 @@ import com.linktech.saihub.db.utils.WalletDaoUtils
 import com.linktech.saihub.entity.event.MessageEvent
 import com.linktech.saihub.entity.event.SocketEvent
 import com.linktech.saihub.manager.ActivityManager
+import com.linktech.saihub.mvvm.base.vmObserver
+import com.linktech.saihub.mvvm.model.WalletViewModel
 import com.linktech.saihub.ui.dialog.ConfirmDialog
 import com.linktech.saihub.ui.dialog.NomalSuccessFailDialog
+import com.linktech.saihub.ui.dialog.SetWalletNameDialog
 import com.linktech.saihub.util.ToastUtils
+import com.linktech.saihub.util.system.getRandomName
 import com.linktech.saihub.util.system.setVisible
 import com.qmuiteam.qmui.kotlin.onClick
 import com.wei.android.lib.fingerprintidentify.FingerprintIdentify
@@ -36,6 +42,10 @@ import org.greenrobot.eventbus.ThreadMode
 class WalletManagerActivity : BaseActivity() {
 
     var binding: ActivityWalletManagerBinding? = null
+
+    private val walletViewModel by lazy {
+        ViewModelProvider(this)[WalletViewModel::class.java]
+    }
 
     var walletBean: WalletBean? = null
     override fun onInit() {
@@ -136,6 +146,30 @@ class WalletManagerActivity : BaseActivity() {
     }
 
     private fun addEvent() {
+
+        binding?.apply {
+            tvWalletName.text = walletBean?.name
+
+            clWalletName.onClick(Constants.CLICK_INTERVAL) {
+                val setWalletNameDialog = SetWalletNameDialog(tvWalletName.text.toString())
+                setWalletNameDialog.confirmEvent = {
+                    if (!TextUtils.isEmpty(it))
+                        walletBean?.let { it1 -> walletViewModel.updateWalletName(it!!, it1) }
+                }
+                setWalletNameDialog.showNow(supportFragmentManager, "")
+            }
+        }
+
+        walletViewModel.mChangeNameData.vmObserver(this) {
+            onAppSuccess = {
+                walletBean = it
+                binding?.tvWalletName?.text = walletBean?.name
+                ToastUtils.shortRightImageToast(getString(R.string.save_success))
+                EventBus.getDefault()
+                    .post(MessageEvent.getInstance(MessageEvent.MESSAGE_ID_CHANGE_WALLET_ADDRESS))
+            }
+        }
+
         //备份私钥或者助记词
         binding?.clBackupPrivateKeyOrMnemonic?.onClick(Constants.CLICK_INTERVAL) {
             ARouter.getInstance()

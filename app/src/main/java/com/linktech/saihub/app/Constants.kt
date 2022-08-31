@@ -14,10 +14,11 @@ object Constants {
     const val ASSET_REFRESH_INTERVAL = 60000L
     const val CLICK_INTERVAL_500 = 500L
     const val CLICK_INTERVAL = 1000L
+
     /**
      * 密码验证间隔时间     (设置-开启关闭指纹验证)
      */
-    const val VERIFY_PWD_TIME=1000 * 60
+    const val VERIFY_PWD_TIME = 1000 * 60
 
     const val SOCKET_WS = "socket_ws"
 
@@ -90,11 +91,13 @@ object Constants {
     /**
      * 地址本上线
      */
-    const val ADDRESS_UP_NUMBER =20
+    const val ADDRESS_UP_NUMBER = 20
+
     /**
      * 矿池 电力热力
      */
-    const val POLL_POWER_UP_NUMBER =50
+    const val POLL_POWER_UP_NUMBER = 50
+
     /**
      * 是否有通知消息(在收到转账通知和系统通知消息时候  更改为true)  我的界面右上角的通知铃铛显示
      */
@@ -170,6 +173,7 @@ object Constants {
     const val EXIST_PUBLIC_KEY = 3 //拓展公钥类型
     const val EXIST_ADDRESS = 4 //普通地址类型
     const val EXIST_MULTI_SIG = 5 //多签类型
+    const val EXIST_LIGHTNING = 6 //闪电网络类型
 
     /**
      * 非找零地址

@@ -4,6 +4,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.linktech.saihub.R
+import com.linktech.saihub.app.Constants
 import com.linktech.saihub.databinding.ItemListAddressListBinding
 import com.linktech.saihub.databinding.ItemListPollBinding
 import com.linktech.saihub.databinding.ItemWalletDrawerBinding
@@ -25,9 +27,18 @@ class WalletAdapter(layoutResId: Int) :
     override fun convert(holder: BaseViewHolder, item: WalletBean) {
         val binding: ItemWalletDrawerBinding? = DataBindingUtil.getBinding(holder.itemView)
         binding?.apply {
+            clRoot.setBackgroundResource(
+                if (item.existType == Constants.EXIST_LIGHTNING)
+                    R.mipmap.icon_bg_drawer_wallet_ln
+                else
+                    R.mipmap.icon_bg_drawer_wallet
+            )
             ivSel.setVisible(item.isCurrent)
             tvName.text = item.name
-            tvAddress.text = StringUtils.formatAddress(item.address)
+            tvAddress.text = if (item.existType == Constants.EXIST_LIGHTNING)
+                ""
+            else
+                StringUtils.formatAddress(item.address)
         }
     }
 

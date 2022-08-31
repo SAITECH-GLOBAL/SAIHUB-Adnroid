@@ -8,6 +8,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/shape_bg_toast"
         android:gravity="center_horizontal"
+        android:minWidth="@dimen/dp_247"
         android:orientation="vertical"
         android:paddingStart="@dimen/dp_24"
         android:paddingEnd="@dimen/dp_24">

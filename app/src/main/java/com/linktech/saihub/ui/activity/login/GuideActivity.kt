@@ -14,6 +14,7 @@ import com.linktech.saihub.databinding.ActivityGuideBinding
 import com.linktech.saihub.manager.CacheListManager
 import com.linktech.saihub.manager.MMKVManager
 import com.linktech.saihub.manager.RateAndLocalManager
+import com.linktech.saihub.ui.dialog.SelectWalletTypeDialog
 import com.linktech.saihub.util.system.getAgreementUrl
 import com.linktech.saihub.util.system.getBitcoinUrl
 import com.qmuiteam.qmui.kotlin.onClick
@@ -39,8 +40,10 @@ class GuideActivity : BaseActivity() {
                 if (cbAgreement.isChecked) {
                     //创建或导入过钱包直接进入主页
                     if (CacheListManager.instance?.walletFlag == 0) {
-                        ARouter.getInstance().build(ARouterUrl.WAL_WALLET_ADD_ACTIVITY_PATH)
-                            .navigation()
+                        val sizeList =
+                            arrayListOf(0, 0)
+                        val selectWalletTypeDialog = SelectWalletTypeDialog.newInstance(sizeList)
+                        selectWalletTypeDialog.showNow(supportFragmentManager, "")
                     } else {
                         ARouter.getInstance().build(ARouterUrl.WAL_SAIHUB_WALLET_MAIN_ACTIVITY_PATH)
                             .navigation()

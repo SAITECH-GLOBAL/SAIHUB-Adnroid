@@ -43,7 +43,7 @@ public class DateUtils {
     public static final String DATE_FORMAT_10 = "yyyy年MM月dd日 HH:mm:ss";
 
     public static final String DATE_FORMAT_11 = "mm:ss";
-    public static final String DATE_FORMAT_13 = "HH:mm:ss";
+    public static final String DATE_FORMAT_13 = "HH: mm: ss";
     public static final String DATE_FORMAT_14 = "MM.dd";
     public static final String DATE_FORMAT_15 = "yyyy.MM.dd HH:mm";
     public static final String DATE_FORMAT_16 = "MM/dd HH:mm";
@@ -190,9 +190,18 @@ public class DateUtils {
         return strTemp;
     }
 
-    public static String getSimpleTimeFormatS(long time, String formatStr) {
+    public static String getCountDownTimeFormat(long time) {
         String strTemp = "";
         Date dateCreate = new Date(time);
+        SimpleDateFormat myFmt2 = new SimpleDateFormat(DATE_FORMAT_13);
+        myFmt2.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
+        strTemp = myFmt2.format(dateCreate);
+        return strTemp;
+    }
+
+    public static String getSimpleTimeFormatS(long time, String formatStr) {
+        String strTemp = "";
+        Date dateCreate = new Date(time*1000);
         SimpleDateFormat myFmt2 = new SimpleDateFormat(formatStr);
         myFmt2.setTimeZone(TimeZone.getDefault());
         strTemp = myFmt2.format(dateCreate);

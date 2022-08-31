@@ -29,6 +29,8 @@ public class TopBar extends RelativeLayout {
 
     private int leftVisiblity;
 
+    private int rightVisiblity;
+
     private RelativeLayout leftLayout;
 
     private LinearLayout rightLayout;
@@ -113,6 +115,7 @@ public class TopBar extends RelativeLayout {
             tilteIconRes = ta.getDrawable(R.styleable.TopBar_title_icon);
             leftIconRes = ta.getDrawable(R.styleable.TopBar_left_icon);
             leftVisiblity = ta.getInt(R.styleable.TopBar_left_visiblity, VISIBLE);
+            rightVisiblity = ta.getInt(R.styleable.TopBar_right_visiblity, VISIBLE);
             dividerVisiblity = ta.getInt(R.styleable.TopBar_divider_visiblity, GONE);
 
             rightText = ta.getString(R.styleable.TopBar_right_text);
@@ -151,6 +154,7 @@ public class TopBar extends RelativeLayout {
             setRightText(rightText);
 
             setLeftVisiblity(leftVisiblity);
+            setRightVisiblity(rightVisiblity);
 
             divider.setVisibility(dividerVisiblity);
         }

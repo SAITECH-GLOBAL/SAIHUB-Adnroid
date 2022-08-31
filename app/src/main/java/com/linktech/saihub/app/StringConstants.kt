@@ -35,6 +35,8 @@ object StringConstants {
 
     const val BLOCK_CHAIN_HEADER: String = "block_chain_header"
 
+    const val LIGHTNING_HEADER: String = "lightning_header"
+
     const val TRANSFER_SEND_DATA: String = "transfer_send_data"
 
     const val TRANSACTION_HEX: String = "transaction_hex"
@@ -50,5 +52,17 @@ object StringConstants {
     const val IS_SINGLE_SIG: String = "is_single_sig"
 
     const val ADDRESS_SHARE: String = "address_share"
+
+    //闪电网络交易记录类型
+    const val PAID_INVOICE: String = "paid_invoice"
+    const val BITCOIND_TX: String = "bitcoind_tx"
+    const val USER_INVOICE_PAID: String = "user_invoice_paid"
+    const val USER_INVOICE_WAIT: String = "user_invoice_wait"
+    const val USER_INVOICE_OUT: String = "user_invoice_out"
+
+    const val INVOICE_DATA: String = "invoice_data"
+
+    const val INPUT_TYPE_INVOICE: String = "input_type_invoice"
+    const val INPUT_TYPE_KEYSEND: String = "input_type_keysend"
 
 }

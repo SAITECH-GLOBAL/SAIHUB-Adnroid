@@ -2,6 +2,9 @@
 buildscript {
     ext.kotlin_version = "1.6.0"
     repositories {
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
         google()
         mavenCentral()
         jcenter()
@@ -20,6 +23,9 @@ buildscript {
 allprojects {
     repositories {
         google()
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
         jcenter()
         mavenCentral()
         maven { url "https://jitpack.io" }
@@ -27,8 +33,8 @@ allprojects {
 }
 
 ext {
-    versionCode = 1
-    versionName = "1.0.0"
+    versionCode = 2
+    versionName = "1.1.0"
 
     minSdkVersion = 23
     targetSdkVersion = 30

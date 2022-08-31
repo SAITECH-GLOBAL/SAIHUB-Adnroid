@@ -53,6 +53,18 @@ public class WalletBean implements Parcelable {
     //多签原始数据
     private String multiSigData = "";
 
+    //闪电网络钱包 新增属性
+    //域名、login、password、认证用accessToken、刷新token时使用的refreshToken
+    private String host = "";
+    private String login = "";
+    private String lnPassword = "";
+    private String accessToken = "";
+    private String refreshToken = "";
+    private String lnBalance = "0";
+    private String lnSat = "0";
+    //ln是否开启密码支付  默认false
+    private boolean isLNOpenPwdPay = false;
+
     public Long getId() {
         return this.id;
     }
@@ -240,12 +252,13 @@ public class WalletBean implements Parcelable {
     public WalletBean() {
     }
 
-    @Generated(hash = 432237851)
-    public WalletBean(Long id, String address, String name, String password, String mnemonic, boolean isCurrent,
-            boolean isBackup, boolean isObserver, int addressType, String privateKey, String publicKey,
-            String publicKeyExt, String passphrase, long createTime, int childAddressType,
-            boolean isReportAddressToServer, String addressToServer, boolean isOpenTouchIdPay, String asset,
-            String assetUSD, String assetRub, int existType, String policy, String multiSigData) {
+    @Generated(hash = 83810226)
+    public WalletBean(Long id, String address, String name, String password, String mnemonic, boolean isCurrent, boolean isBackup,
+            boolean isObserver, int addressType, String privateKey, String publicKey, String publicKeyExt, String passphrase,
+            long createTime, int childAddressType, boolean isReportAddressToServer, String addressToServer, boolean isOpenTouchIdPay,
+            String asset, String assetUSD, String assetRub, int existType, String policy, String multiSigData, String host,
+            String login, String lnPassword, String accessToken, String refreshToken, String lnBalance, String lnSat,
+            boolean isLNOpenPwdPay) {
         this.id = id;
         this.address = address;
         this.name = name;
@@ -270,6 +283,14 @@ public class WalletBean implements Parcelable {
         this.existType = existType;
         this.policy = policy;
         this.multiSigData = multiSigData;
+        this.host = host;
+        this.login = login;
+        this.lnPassword = lnPassword;
+        this.accessToken = accessToken;
+        this.refreshToken = refreshToken;
+        this.lnBalance = lnBalance;
+        this.lnSat = lnSat;
+        this.isLNOpenPwdPay = isLNOpenPwdPay;
     }
 
     public String getPublicKeyExt() {
@@ -279,6 +300,63 @@ public class WalletBean implements Parcelable {
     public void setPublicKeyExt(String publicKeyExt) {
         this.publicKeyExt = publicKeyExt;
     }
+
+    public String getHost() {
+        return this.host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public String getLogin() {
+        return this.login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getLnPassword() {
+        return this.lnPassword;
+    }
+
+    public void setLnPassword(String lnPassword) {
+        this.lnPassword = lnPassword;
+    }
+
+    public String getAccessToken() {
+        return this.accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
+    public String getRefreshToken() {
+        return this.refreshToken;
+    }
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
+    public String getLnBalance() {
+        return this.lnBalance;
+    }
+
+    public void setLnBalance(String lnBalance) {
+        this.lnBalance = lnBalance;
+    }
+
+    public String getLnSat() {
+        return this.lnSat;
+    }
+
+    public void setLnSat(String lnSat) {
+        this.lnSat = lnSat;
+    }
+
 
     @Override
     public int describeContents() {
@@ -312,6 +390,14 @@ public class WalletBean implements Parcelable {
         dest.writeInt(this.existType);
         dest.writeString(this.policy);
         dest.writeString(this.multiSigData);
+        dest.writeString(this.host);
+        dest.writeString(this.login);
+        dest.writeString(this.lnPassword);
+        dest.writeString(this.accessToken);
+        dest.writeString(this.refreshToken);
+        dest.writeString(this.lnBalance);
+        dest.writeString(this.lnSat);
+        dest.writeByte(this.isLNOpenPwdPay ? (byte) 1 : (byte) 0);
     }
 
     public void readFromParcel(Parcel source) {
@@ -340,6 +426,22 @@ public class WalletBean implements Parcelable {
         this.existType = source.readInt();
         this.policy = source.readString();
         this.multiSigData = source.readString();
+        this.host = source.readString();
+        this.login = source.readString();
+        this.lnPassword = source.readString();
+        this.accessToken = source.readString();
+        this.refreshToken = source.readString();
+        this.lnBalance = source.readString();
+        this.lnSat = source.readString();
+        this.isLNOpenPwdPay = source.readByte() != 0;
+    }
+
+    public boolean getIsLNOpenPwdPay() {
+        return this.isLNOpenPwdPay;
+    }
+
+    public void setIsLNOpenPwdPay(boolean isLNOpenPwdPay) {
+        this.isLNOpenPwdPay = isLNOpenPwdPay;
     }
 
     protected WalletBean(Parcel in) {
@@ -368,9 +470,17 @@ public class WalletBean implements Parcelable {
         this.existType = in.readInt();
         this.policy = in.readString();
         this.multiSigData = in.readString();
+        this.host = in.readString();
+        this.login = in.readString();
+        this.lnPassword = in.readString();
+        this.accessToken = in.readString();
+        this.refreshToken = in.readString();
+        this.lnBalance = in.readString();
+        this.lnSat = in.readString();
+        this.isLNOpenPwdPay = in.readByte() != 0;
     }
 
-    public static final Parcelable.Creator<WalletBean> CREATOR = new Parcelable.Creator<WalletBean>() {
+    public static final Creator<WalletBean> CREATOR = new Creator<WalletBean>() {
         @Override
         public WalletBean createFromParcel(Parcel source) {
             return new WalletBean(source);

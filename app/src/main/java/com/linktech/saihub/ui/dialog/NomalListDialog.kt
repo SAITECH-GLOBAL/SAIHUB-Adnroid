@@ -70,7 +70,7 @@ class NomalListDialog() : BaseFullBottomSheetFragment() {
         binding?.recyEditList?.addItemDecoration(SpacesVerticalItemDecoration(PixelUtils.dp2px(16F)))
         binding?.recyEditList?.itemAnimator = null
 
-        listAdapter?.addChildClickViewIds(R.id.tv_content)
+        listAdapter?.addChildClickViewIds(R.id.ll_content)
         listAdapter?.setOnItemChildClickListener { adapter, view, position ->
             itemChildEvent(position)
             dismiss()

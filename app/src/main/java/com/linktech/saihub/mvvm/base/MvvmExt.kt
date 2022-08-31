@@ -9,6 +9,7 @@ import com.linktech.saihub.base.BaseFragment
 import com.linktech.saihub.net.BaseResp
 import com.linktech.saihub.net.ex.ApiException
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import java.net.ConnectException
 import java.net.UnknownHostException
@@ -125,6 +126,22 @@ fun <T> BaseViewModel.launchVmRequest(
             viewState.paresVmResult(it)
         }.onFailure {
             viewState.paresVmException(it)
+        }
+    }
+}
+
+fun <T> BaseViewModel.launchNewVmRequest(
+    request: suspend () -> T,
+    viewState: VmLiveData<T>
+): Job {
+    return viewModelScope.launch {
+        runCatching {
+            viewState.value = VmState.Loading
+            request()
+        }.onSuccess {
+            viewState.paresVmNewResult(it)
+        }.onFailure {
+            viewState.paresVmNewException(it)
         }
     }
 }

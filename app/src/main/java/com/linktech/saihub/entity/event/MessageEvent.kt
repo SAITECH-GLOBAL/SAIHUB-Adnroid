@@ -65,6 +65,19 @@ class MessageEvent() {
          */
         const val MESSAGE_ID_CHANGE_WALLET_ADDRESS = 9
 
+        /**
+         * 开启关闭闪电钱包支付密码
+         */
+        const val MESSAGE_ID_CHANGE_PAY_PWD_LN_WALLET = 10
+        /**
+         * 刷新闪电钱包交易记录
+         */
+        const val MESSAGE_ID_REFRESH_RECORD_LN_WALLET = 11
+        /**
+         * 刷新闪电钱包token
+         */
+        const val MESSAGE_ID_REFRESH_TOKEN_LN_WALLET = 12
+
         fun getInstance(id: Int): MessageEvent? {
             return MessageEvent(id)
         }

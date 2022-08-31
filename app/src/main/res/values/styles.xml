@@ -125,6 +125,13 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="fontFamily">@font/montserrat_medium</item>
     </style>
+    <style name="text_gray_normal">
+        <item name="android:textSize">@dimen/text_14_sp</item>
+        <item name="android:textColor">@color/color_FF686F7C</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
 
     <style name="rb_normal_style">
         <item name="android:textColor">@color/color_sel_rb</item>

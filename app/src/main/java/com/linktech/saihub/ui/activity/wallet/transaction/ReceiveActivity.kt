@@ -68,7 +68,7 @@ class ReceiveActivity : BaseActivity() {
                 Constants.EXIST_MNEMONIC, Constants.EXIST_PUBLIC_KEY, Constants.EXIST_MULTI_SIG -> {
                     llRefresh.setVisible(true)
                 }
-                Constants.EXIST_PRIVATE_KEY, Constants.EXIST_ADDRESS -> {
+                Constants.EXIST_PRIVATE_KEY, Constants.EXIST_ADDRESS, Constants.EXIST_LIGHTNING -> {
                     llRefresh.setVisible(false)
                 }
             }

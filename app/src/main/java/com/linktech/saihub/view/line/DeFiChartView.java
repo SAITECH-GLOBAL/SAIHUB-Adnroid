@@ -26,6 +26,7 @@ import com.linktech.saihub.view.DeFiMarkerView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 博客 https://www.cnblogs.com/kangweifeng/p/11250907.html
@@ -92,11 +93,11 @@ public class DeFiChartView extends LineChart {
 
     public void setData(List<DeviceInfoHourData> data) {
 
-        List<String> yValues = new ArrayList();
+        List<Double> yValues = new ArrayList();
 
         for (int i = 0; i < data.size(); i++) {
-            yValues.add(data.get(i).getOutputHeat());
-            yValues.add(data.get(i).getUnitEnergyConsumption());
+            yValues.add(Double.parseDouble(Objects.requireNonNull(data.get(i).getOutputHeat())));
+            yValues.add(Double.parseDouble(Objects.requireNonNull(data.get(i).getUnitEnergyConsumption())));
         }
 
         DeFiMarkerView mv = new DeFiMarkerView(getContext(), R.layout.custom_marker_view, data);
@@ -110,8 +111,26 @@ public class DeFiChartView extends LineChart {
         axisLeft.setDrawAxisLine(false);
         axisLeft.setLabelCount(4);
         axisLeft.setGridLineWidth(1);
-        axisLeft.setAxisMinimum(Float.parseFloat(NumberCountUtils.getConvert(Collections.min(yValues), "0.9", 6)));
-        axisLeft.setAxisMaximum(Float.parseFloat(NumberCountUtils.getConvert(Collections.max(yValues), "1.1", 6)));
+        if (yValues.size() > 0) {
+            double min = NumberCountUtils.getMinFromList(yValues);
+            double max = NumberCountUtils.getMaxFromList(yValues);
+            if (min == 0 && max == 0) {
+                axisLeft.setAxisMinimum(-1f);
+                axisLeft.setAxisMaximum(1f);
+            } else if (min > 0) {
+                axisLeft.setAxisMinimum(Float.parseFloat(NumberCountUtils.getConvert(String.valueOf(min), "0.9", 6)));
+                axisLeft.setAxisMaximum(Float.parseFloat(NumberCountUtils.getConvert(String.valueOf(max), "1.1", 6)));
+            } else if (max < 0) {
+                axisLeft.setAxisMinimum(Float.parseFloat(NumberCountUtils.getConvert(String.valueOf(min), "1.1", 6)));
+                axisLeft.setAxisMaximum(Float.parseFloat(NumberCountUtils.getConvert(String.valueOf(max), "0.9", 6)));
+            } else {
+                axisLeft.setAxisMinimum(Float.parseFloat(NumberCountUtils.getConvert(String.valueOf(min), "1.1", 6)));
+                axisLeft.setAxisMaximum(Float.parseFloat(NumberCountUtils.getConvert(String.valueOf(max), "1.1", 6)));
+            }
+        } else {
+            axisLeft.setAxisMinimum(0f);
+            axisLeft.setAxisMaximum(1f);
+        }
         axisLeft.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/d_dinexp_bold.otf"));
         axisLeft.setTextColor(Color.parseColor("#FF3E475A"));
         axisLeft.setGridColor(Color.parseColor("#0F090E16"));
@@ -206,7 +225,10 @@ public class DeFiChartView extends LineChart {
 
             @Override
             public String getFormattedValue(float value) {
-                return DateUtils.getSimpleTimeFormat(data.get((int) value).getTimestamp(), DateUtils.DATE_FORMAT_18);
+                if (data.size() > 0) {
+                    return DateUtils.getSimpleTimeFormat(data.get((int) value).getTimestamp(), DateUtils.DATE_FORMAT_18);
+                }
+                return "";
             }
         });
 //        xAxis.setAxisMinimum(-1f);

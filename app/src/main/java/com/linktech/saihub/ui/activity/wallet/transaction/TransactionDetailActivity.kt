@@ -160,7 +160,7 @@ class TransactionDetailActivity : BaseActivity() {
             }
             onAppError = {
                 hideLoading()
-                it.errorMsg?.let { it1 -> ToastUtils.shortImageToast(it1) }
+                it.errorMsg.let { it1 -> ToastUtils.shortImageToast(it1) }
             }
         }
 
@@ -175,7 +175,7 @@ class TransactionDetailActivity : BaseActivity() {
             }
             onAppError = {
                 hideLoading()
-                it.errorMsg?.let { it1 -> ToastUtils.shortImageToast(it1) }
+                it.errorMsg.let { it1 -> ToastUtils.shortImageToast(it1) }
             }
         }
 

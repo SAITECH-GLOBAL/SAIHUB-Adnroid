@@ -33,6 +33,7 @@ import com.linktech.saihub.net.ex.ApiException
 import com.linktech.saihub.ui.activity.WeChatQRCodeActivity
 import com.linktech.saihub.ui.activity.WeChatQRCodeActivity.Companion.TYPE_IMPORT
 import com.linktech.saihub.ui.dialog.SelectAddressTypeDialog
+import com.linktech.saihub.ui.dialog.SetWalletNameDialog
 import com.linktech.saihub.util.LogUtils
 import com.linktech.saihub.util.ToastUtils
 import com.linktech.saihub.util.system.*
@@ -78,6 +79,15 @@ class ImportWalletActivity : BaseActivity(), EasyPermissions.PermissionCallbacks
         binding?.apply {
             //生成随机钱包名称
             tvWalletName.text = "BTC-${getRandomName()}"
+
+            tvWalletName.onClick(Constants.CLICK_INTERVAL) {
+                val setWalletNameDialog = SetWalletNameDialog(tvWalletName.text.toString())
+                setWalletNameDialog.confirmEvent = {
+                    if (!TextUtils.isEmpty(it))
+                        tvWalletName.text = it
+                }
+                setWalletNameDialog.showNow(supportFragmentManager, "")
+            }
 
             tbImport.setRightOnClickListener(object : OnFastClickListener() {
                 override fun onClickNoFast(v: View?) {
